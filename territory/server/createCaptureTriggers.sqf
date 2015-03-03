@@ -24,7 +24,7 @@ if (!isServer) exitWith {};
 			
             //Set default guards
 			_pos = markerPos _marker;
-			_numSide = 2;
+			_numSide = 0;
 			_size = getMarkerSize _marker;
 			_dir = "random"; //markerDir _captureName
 			_radius = (_size select 0) max (_size select 1);
@@ -57,7 +57,7 @@ if (!isServer) exitWith {};
 	
 		//Set default guards
 		_target = markerPos _marker;
-		_side = 2;
+		_side = 0;
 		_patrol = true;
 		_patrolType = 2;
 		_spawnAlways = 2;
@@ -78,7 +78,7 @@ if (!isServer) exitWith {};
 	
 		//Set default guards
 		_target = markerPos _marker;
-		_side = 2;
+		_side = 0;
 		_patrol = true;
 		_patrolType = 2;
 		_spawnAlways = 2;
@@ -99,7 +99,7 @@ if (!isServer) exitWith {};
 	
 		//Set default guards
 		_target = markerPos _marker;
-		_side = 2;
+		_side = 0;
 		_patrol = true;
 		_patrolType = 2;
 		_spawnAlways = 2;
