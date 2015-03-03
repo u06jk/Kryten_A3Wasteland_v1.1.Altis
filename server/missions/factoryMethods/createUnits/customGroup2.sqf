@@ -37,9 +37,9 @@ for "_i" from 1 to _nbUnits do
 	removeVest _unit;
 	removeBackpack _unit;
 	_unit addVest "V_HarnessOSpec_gry";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
+	_unit addMagazine "20Rnd_762x51_Mag";
+	_unit addMagazine "20Rnd_762x51_Mag";
+	_unit addMagazine "20Rnd_762x51_Mag";
 
 	switch (true) do
 	{
@@ -47,7 +47,7 @@ for "_i" from 1 to _nbUnits do
 		case (_i % 3 == 0):
 		{
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
-			_unit addWeapon "arifle_TRG21_GL_F";
+			_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
 		};
@@ -55,7 +55,7 @@ for "_i" from 1 to _nbUnits do
 		case ((_i + 5) % 7 == 0):
 		{
 			_unit addBackpack "B_Kitbag_mcamo";
-			_unit addWeapon "arifle_TRG20_F";
+			_unit addWeapon "srifle_EBR_MRCO_pointer_F";
 			_unit addMagazine "Titan_AT";
 			_unit addWeapon "launch_Titan_short_F";
 			_unit addMagazine "Titan_AT";
@@ -66,12 +66,12 @@ for "_i" from 1 to _nbUnits do
 		{
 			if (_unit == leader _group) then
 			{
-				_unit addWeapon "arifle_TRG21_F";
+				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit setRank "SERGEANT";
 			}
 			else
 			{
-				_unit addWeapon "arifle_TRG20_F";
+				_unit addWeapon "srifle_EBR_MRCO_pointer_F";
 			};
 		};
 	};
