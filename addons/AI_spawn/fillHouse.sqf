@@ -127,18 +127,9 @@ while{_i2 < _rat}do{
 	_unit = _milGroup createUnit [_unitType, _newPos, [], 0, "NONE"];
 	_unit setpos _newPos;  
 	
-	if (_side == 0) then {
-		_weaponTypes = ["srifle_EBR_ARCO_pointer_F","arifle_MXM_Hamr_pointer_F","srifle_EBR_ARCO_pointer_snds_F","launch_Titan_F","launch_Titan_short_F"];
-        _unit forceAddUniform "U_I_GhillieSuit";
-        [_unit, _weaponTypes call BIS_fnc_selectRandom, 3] call BIS_fnc_addWeapon;
-        /*************************
-        _unit setCaptive false;
-        _setRating = -10000;//value rating is to be set to.
-        _getRating = rating _unit;
-        _addVal = _setRating - _getRating;
-        _unit addRating _addVal;
-        *************************/
-    };
+	_weaponTypes = ["srifle_EBR_ARCO_pointer_F","arifle_MXM_Hamr_pointer_F","srifle_EBR_ARCO_pointer_snds_F","launch_Titan_F","launch_Titan_short_F"];
+    _unit forceAddUniform "U_I_GhillieSuit";
+    [_unit, _weaponTypes call BIS_fnc_selectRandom, 3] call BIS_fnc_addWeapon;
 	
 	if(typeName _skills != "STRING")then{_skls = [_unit,_skills] call LV_ACskills;};
 
