@@ -166,7 +166,7 @@ if((_men select 0)||(_men select 1))then{
 		_unit setPos _pos;
     
 		if (_side == 0) then {
-			_weaponTypes = ["srifle_EBR_ARCO_pointer_F","arifle_MXM_Hamr_pointer_F","srifle_EBR_ARCO_pointer_snds_F","launcher_Titan_F","launcher_Titan_short_F"];
+			_weaponTypes = ["srifle_EBR_ARCO_pointer_F","arifle_MXM_Hamr_pointer_F","srifle_EBR_ARCO_pointer_snds_F","launch_Titan_F","launch_Titan_short_F"];
 			_unit forceAddUniform "U_I_GhillieSuit";
 			[_unit, _weaponTypes call BIS_fnc_selectRandom, 3] call BIS_fnc_addWeapon;
 			/*************************
