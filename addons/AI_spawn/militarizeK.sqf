@@ -23,7 +23,7 @@ _centerPos = getMarkerPos _marker;
 _menAmount = 5 + (ceil (random 5));
 _vehAmount = (ceil (random 1));
 
-diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
+//diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
 _allUnitsArray = [];
 _milHQ = createCenter east;
@@ -63,7 +63,7 @@ if (_menAmount > 0) then {
 		{
 			case (1):
 			{
-				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
+				//diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -72,7 +72,7 @@ if (_menAmount > 0) then {
 			
 			case (2):
 			{
-				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
+				//diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "arifle_MXM_Hamr_pointer_F";
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
@@ -81,7 +81,7 @@ if (_menAmount > 0) then {
 			
 			case (3):
 			{
-				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
+				//diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_snds_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -90,7 +90,7 @@ if (_menAmount > 0) then {
 			
 			case (4):
 			{
-				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
+				//diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -103,7 +103,7 @@ if (_menAmount > 0) then {
 			
 			case (5):
 			{
-				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
+				//diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
