@@ -63,6 +63,7 @@ if (_menAmount > 0) then {
 		{
 			case (1):
 			{
+				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -71,6 +72,7 @@ if (_menAmount > 0) then {
 			
 			case (2):
 			{
+				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "arifle_MXM_Hamr_pointer_F";
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
@@ -79,6 +81,7 @@ if (_menAmount > 0) then {
 			
 			case (3):
 			{
+				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_snds_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -87,6 +90,7 @@ if (_menAmount > 0) then {
 			
 			case (4):
 			{
+				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -99,6 +103,7 @@ if (_menAmount > 0) then {
 			
 			case (5):
 			{
+				diag_log format ["Creating guard %1 with weapon %2", _i, _weapon];
 				_unit addWeapon "srifle_EBR_ARCO_pointer_F";
 				_unit addMagazine "20Rnd_762x51_Mag";
 				_unit addMagazine "20Rnd_762x51_Mag";
@@ -116,7 +121,7 @@ if (_menAmount > 0) then {
 		_unit spawn addMilCap;
 		_unit spawn refillPrimaryAmmo;
 		
-		nul = [_unit, _centerPosPos, _radius, true] execVM "addons\AI_spawn\patrol-vD.sqf";
+		nul = [_unit, _centerPos, _radius, true] execVM "addons\AI_spawn\patrol-vD.sqf";
 		
 		_unit allowDamage false;
 		_allUnitsArray set [(count _allUnitsArray), _unit];
@@ -144,11 +149,13 @@ if (_vehAmount > 0) then {
 		{
 			case (1):
 			{
+				diag_log format ["Creating vehicle %1 with vehicleType %2", _i, _vehicleType];
 				_vehicle = createVehicle ["B_APC_Tracked_01_AA_F", _pos, [], 0, "NONE"];
 			};
 			
 			case (2):
 			{
+				diag_log format ["Creating vehicle %1 with vehicleType %2", _i, _vehicleType];
 				_vehicle = createVehicle ["B_MBT_01_cannon_F", _pos, [], 0, "NONE"];
 			};
 		};
