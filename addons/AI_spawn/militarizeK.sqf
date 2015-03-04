@@ -19,8 +19,8 @@ if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "addons\
 if(isNil("LV_fullLandVehicle"))then{LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
 
 _centerPos = getMarkerPos _marker;
-_menAmount = 5 + (random 5);
-_vehAmount = (random 1);
+_menAmount = 5 + (round ((random 5) + 0,5));
+_vehAmount = (round ((random 1) + 0,5));
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
@@ -31,7 +31,7 @@ _milGroup = createGroup civilian;
 if (_menAmount > 0) then {
 	for "_i" from 1 to _menAmount do {
 		_validPos = false;
-		while (!_validPos) do {
+		while {!_validPos} do {
 			_dir = random 360;
 			_range = random _radius;
 			_pos = [(_centerPos select 0) + (sin _dir) * _range, (_centerPos select 1) + (cos _dir) * _range, 0];
@@ -56,7 +56,7 @@ if (_menAmount > 0) then {
 		_unit addVest "V_PlateCarrier1_rgr";
 		_unit addBackpack "B_Kitbag_mcamo";
 		
-		_weapon = (random 5);
+		_weapon = (round ((random 5) + 0,5));
 		
 		switch (_weapon) do
 		{
@@ -127,17 +127,17 @@ _milGroup setBehaviour "SAFE";
 if (_vehAmount > 0) then {
 	for "_i" from 1 to _vehAmount do {
 		_validPos = false;
-		while (!_validPos) do {
+		while {!_validPos} do {
 			_dir = random 360;
 			_range = random _radius;
 			_pos = [(_centerPos select 0) + (sin _dir) * _range, (_centerPos select 1) + (cos _dir) * _range, 0];
 			
-			if (!surfaceWater _pos) then {
+			if (!surfaceIsWater _pos) then {
 				_validPos = true;
 			};
 		};
 		
-		_vehicleType = (random 2);
+		_vehicleType = (round ((random 2) + 0,5));
 		
 		switch (_vehicle) do
 		{
