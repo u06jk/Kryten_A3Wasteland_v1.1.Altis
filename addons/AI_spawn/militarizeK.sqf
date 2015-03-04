@@ -7,7 +7,7 @@ groupId
 
 if (!isServer)exitWith{};
 
-private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicle","_crew","_driver"];
+private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicle","_driver"];
 
 _marker = if(count _this > 0) then {_this select 0;};
 _radius = if(count _this > 1) then {_this select 1;} else {2;};
@@ -139,14 +139,14 @@ if (_vehAmount > 0) then {
 		};
 		
 		_driver = [_pos, 1] call LV_fullLandVehicle;
-		
 		nul = [vehicle _driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
 		_vehicle = vehicle _driver;
-		_vehicle allowDamage false;
-		_allUnitsArray set [(count _allUnitsArray), _vehicle];
-		
-		(units(group _driver)) joinSilent _milGroup;
+        _vehicle allowDamage false;
+        
+        _allUnitsArray set [(count _allUnitsArray), _vehicle];
+        
+		(units(group _driver)) joinSilent _milGroup; 
 	};
 };
 

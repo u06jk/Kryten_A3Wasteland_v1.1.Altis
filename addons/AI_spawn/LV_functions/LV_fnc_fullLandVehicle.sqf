@@ -24,7 +24,7 @@ _OPFveh = [
 	"O_Quadbike_01_F",
 	"O_MRAP_02_F",
 	"O_MRAP_02_gmg_F",
-	"O_MRAP_02_hmg_F"
+	"O_MRAP_02_hmg_F",
 	"O_Truck_02_transport_F",
 	"O_Truck_02_covered_F",
 	"O_APC_Wheeled_02_rcws_F",
