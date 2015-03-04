@@ -7,7 +7,7 @@ groupId
 
 if (!isServer)exitWith{};
 
-private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicleType","_vehicle","_crew","_driver"];
+private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicle","_crew","_driver"];
 
 _marker = if(count _this > 0) then {_this select 0;};
 _radius = if(count _this > 1) then {_this select 1;} else {2;};
@@ -26,8 +26,8 @@ _vehAmount = (ceil (random 1));
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
 _allUnitsArray = [];
-_milHQ = createCenter civilian;
-_milGroup = createGroup civilian;
+_milHQ = createCenter east;
+_milGroup = createGroup east;
 
 if (_menAmount > 0) then {
 	for "_i" from 1 to _menAmount do {
@@ -42,7 +42,7 @@ if (_menAmount > 0) then {
 			};
 		};
 		
-		_unit = _milGroup createUnit ["C_man_polo_1_F", _pos, [], 0, "NONE"];
+		_unit = _milGroup createUnit ["O_Soldier_A_F", _pos, [], 0, "NONE"];
 		_unit setPos _pos;
 		
 		removeAllWeapons _unit;
@@ -143,28 +143,11 @@ if (_vehAmount > 0) then {
 			};
 		};
 		
-		_vehicleType = (ceil (random 2));
-		
-		switch (_vehicle) do
-		{
-			case (1):
-			{
-				diag_log format ["Creating vehicle %1 with vehicleType %2", _i, _vehicleType];
-				_vehicle = createVehicle ["B_APC_Tracked_01_AA_F", _pos, [], 0, "NONE"];
-			};
-			
-			case (2):
-			{
-				diag_log format ["Creating vehicle %1 with vehicleType %2", _i, _vehicleType];
-				_vehicle = createVehicle ["B_MBT_01_cannon_F", _pos, [], 0, "NONE"];
-			};
-		};
-		
-		_crew = [_vehicle, _milGroup] call BIS_fnc_spawnCrew;
-		_driver = driver _vehicle;
+		_driver = [_pos, 1] call LV_fullLandVehicle;
 		
 		nul = [_driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
+		_vehicle = vehicle driver;
 		_vehicle allowDamage false;
 		_allUnitsArray set [(count _allUnitsArray), _vehicle];
 		
