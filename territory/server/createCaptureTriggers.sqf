@@ -39,22 +39,7 @@ if (!isServer) exitWith {};
 	
 	if (["GunStore", _marker] call fn_startsWith) then
 	{
-		diag_log format ["Creating guards for gun store '%1'", _marker];
-	
 		//Set default guards
-		/*_target = markerPos _marker;
-		_side = 0;
-		_patrol = true;
-		_patrolType = 2;
-		_spawnAlways = 2;
-		_spawnRandom = 2;
-		_radius = 1;
-		_skills = 0.75;
-		_group = nil;
-		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
-		_id = nil;
-		
-		[_target, _side, _patrol, _patrolType, [_spawnAlways, _spawnRandom], _radius, _skills, if (isNil "_group") then {nil} else {_group}, if (isNil "_customInit") then {nil} else {_customInit}, if (isNil "_id") then {nil} else {_id}] execVM "addons\AI_spawn\fillHouse.sqf";*/
 		_size = getMarkerSize _marker;
 		_radius = (_size select 0) max (_size select 1);
 		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
@@ -65,22 +50,7 @@ if (!isServer) exitWith {};
 	
 	if (["GenStore", _marker] call fn_startsWith) then
 	{
-		diag_log format ["Creating guards for general store '%1'", _marker];
-	
 		//Set default guards
-		/*_target = markerPos _marker;
-		_side = 0;
-		_patrol = true;
-		_patrolType = 2;
-		_spawnAlways = 2;
-		_spawnRandom = 2;
-		_radius = 1;
-		_skills = 0.5;
-		_group = nil;
-		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
-		_id = nil;
-		
-		[_target, _side, _patrol, _patrolType, [_spawnAlways, _spawnRandom], _radius, _skills, if (isNil "_group") then {nil} else {_group}, if (isNil "_customInit") then {nil} else {_customInit}, if (isNil "_id") then {nil} else {_id}] execVM "addons\AI_spawn\fillHouse.sqf";*/
 		_size = getMarkerSize _marker;
 		_radius = (_size select 0) max (_size select 1);
 		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";

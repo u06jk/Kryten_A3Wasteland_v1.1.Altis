@@ -26,7 +26,7 @@ diag_log format ["Creating guards for '%1' with '%2' men", _marker, _menAmount];
 _milHQ = createCenter east;
 _milGroup = createGroup east;
 
-_buildings = ["nearest one", _center] call LV_nearestBuilding;
+_buildings = ["nearest one", _marker] call LV_nearestBuilding;
 
 if (isNil("_buildings")) exitWith{};
 if (count _buildings == 0) exitWith{};

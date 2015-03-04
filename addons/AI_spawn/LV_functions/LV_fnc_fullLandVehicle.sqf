@@ -21,7 +21,7 @@ _BLUveh = [
 	
 _OPFveh = [
 	"O_MBT_02_arty_F",
-	"O_Quadbike_01_F",
+	//"O_Quadbike_01_F",
 	"O_MRAP_02_F",
 	"O_MRAP_02_gmg_F",
 	"O_MRAP_02_hmg_F",
