@@ -45,7 +45,7 @@ if (!isServer) exitWith {};
 			
 			_size = getMarkerSize _marker;
 			_radius = (_size select 0) max (_size select 1);
-			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];"
+			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 			_groupID = nil;
 			
 			[_marker, _radius, _customInit, _groupID] execVM "addons\AI_spawn\militarizeK.sqf";
