@@ -22,6 +22,7 @@ _centerPos = getMarkerPos _marker;
 
 _menAmount = 5 + (ceil (random 5));
 _vehAmount = (ceil (random 3));
+_menAmount = _menAmount - _vehAmount;
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
