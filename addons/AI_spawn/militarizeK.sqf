@@ -21,9 +21,9 @@ if(isNil("LV_fullLandVehicle"))then{LV_fullLandVehicle = compile preprocessFile 
 _centerPos = getMarkerPos _marker;
 
 _menAmount = 5 + (ceil (random 5));
-_vehAmount = (ceil (random 1));
+_vehAmount = (ceil (random 3));
 
-//diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
+diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
 _allUnitsArray = [];
 _milHQ = createCenter east;
@@ -147,7 +147,7 @@ if (_vehAmount > 0) then {
 		
 		nul = [_driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
-		_vehicle = vehicle driver;
+		_vehicle = vehicle _driver;
 		_vehicle allowDamage false;
 		_allUnitsArray set [(count _allUnitsArray), _vehicle];
 		
