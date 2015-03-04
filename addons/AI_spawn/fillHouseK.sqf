@@ -36,8 +36,8 @@ _a = 0;
 while {_a < (count _buildings)} do {
 	_building = (_buildings select _a);
 	_i = 0;
-	while {((_buildingPositions _i) select 0) != 0} do {
-		_buildingPositions set [count (_buildingPositions), (_building buildingPos _i_];
+	while {((_building buildingPos _i) select 0) != 0} do {
+		_buildingPositions set [count (_buildingPositions), (_building buildingPos _i)];
 		_i = _i + 1;
 	};
 	_a = _a + 1;
