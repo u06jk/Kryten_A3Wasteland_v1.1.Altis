@@ -23,7 +23,7 @@ if (!isServer) exitWith {};
 			_trig setVariable ["captureTriggerMarker", _marker, true];
 			
             //Set default guards
-			_pos = markerPos _marker;
+			/*_pos = markerPos _marker;
 			_numSide = 0;
 			_size = getMarkerSize _marker;
 			_dir = "random"; 
@@ -41,7 +41,14 @@ if (!isServer) exitWith {};
 			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 			_territoryID = nil;
       
-			[_pos,_numSide,_radius,_spawnInfantry,_spawnVehicles,_stayStill,[_infantryAlways,_infantryRandom],[_vehiclesAlways,_vehiclesRandom],_aiSkills, if (isNil "_groupID") then {nil} else {_groupID}, if (isNil "_customInit") then {nil} else {_customInit},if (isNil "_territoryID") then {nil} else {_territoryID}] execVM "addons\AI_spawn\militarize.sqf";
+			[_pos,_numSide,_radius,_spawnInfantry,_spawnVehicles,_stayStill,[_infantryAlways,_infantryRandom],[_vehiclesAlways,_vehiclesRandom],_aiSkills, if (isNil "_groupID") then {nil} else {_groupID}, if (isNil "_customInit") then {nil} else {_customInit},if (isNil "_territoryID") then {nil} else {_territoryID}] execVM "addons\AI_spawn\militarize.sqf";*/
+			
+			_size = getMarkerSize _marker;
+			_radius = (_size select 0) max (_size select 1);
+			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];"
+			_groupID = nil;
+			
+			[_marker, _radius, _customInit, _groupID] execVM "addons\AI_spawn\militarizeK.sqf";
 		}
 		else
 		{
