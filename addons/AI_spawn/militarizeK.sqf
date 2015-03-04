@@ -19,8 +19,9 @@ if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "addons\
 if(isNil("LV_fullLandVehicle"))then{LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
 
 _centerPos = getMarkerPos _marker;
-_menAmount = 5 + (round ((random 5) + 0,5));
-_vehAmount = (round ((random 1) + 0,5));
+
+_menAmount = 5 + (ceil (random 5));
+_vehAmount = (ceil (random 1));
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
@@ -56,7 +57,7 @@ if (_menAmount > 0) then {
 		_unit addVest "V_PlateCarrier1_rgr";
 		_unit addBackpack "B_Kitbag_mcamo";
 		
-		_weapon = (round ((random 5) + 0,5));
+		_weapon = (ceil (random 5));
 		
 		switch (_weapon) do
 		{
@@ -137,7 +138,7 @@ if (_vehAmount > 0) then {
 			};
 		};
 		
-		_vehicleType = (round ((random 2) + 0,5));
+		_vehicleType = (ceil (random 2));
 		
 		switch (_vehicle) do
 		{
