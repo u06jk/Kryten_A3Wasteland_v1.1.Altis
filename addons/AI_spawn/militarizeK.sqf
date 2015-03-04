@@ -36,7 +36,7 @@ if (_menAmount > 0) then {
 			_range = random _radius;
 			_pos = [(_centerPos select 0) + (sin _dir) * _range, (_centerPos select 1) + (cos _dir) * _range, 0];
 			
-			if (!surfaceWater _pos) then {
+			if (!surfaceIsWater _pos) then {
 				_validPos = true;
 			};
 		};
