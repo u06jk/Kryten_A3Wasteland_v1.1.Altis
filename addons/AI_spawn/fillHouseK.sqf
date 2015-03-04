@@ -46,7 +46,7 @@ while {_a < (count _buildings)} do {
 _i2 = 0;
 while {_i2 < _menAmount} do {
 	_newPos = _buildingPositions select floor (random count _buildingPositions);
-	if (_menAmount < count _buildingPositions) then {_buildingPositions = _buildingPositions - [_newPos]}
+	if (_menAmount < count _buildingPositions) then {_buildingPositions = _buildingPositions - [_newPos];};
 	_i2 = _i2 + 1;
 	
 	_unit = _milGroup createUnit ["O_Soldier_A_F", _pos, [], 0, "NONE"];
