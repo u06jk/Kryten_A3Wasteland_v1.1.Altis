@@ -48,7 +48,7 @@ if (!isServer) exitWith {};
 			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 			_groupID = nil;
 			
-			[_marker, _radius, _customInit, _groupID] execVM "addons\AI_spawn\militarizeK.sqf";
+			[_marker, _radius, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\militarizeK.sqf";
 		}
 		else
 		{

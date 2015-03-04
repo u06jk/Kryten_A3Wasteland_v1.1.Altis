@@ -7,7 +7,7 @@ groupId
 
 if (!isServer)exitWith{};
 
-private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount"."_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicleType","_vehicle","_crew","_driver"];
+private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicleType","_vehicle","_crew","_driver"];
 
 _marker = if(count _this > 0) then {_this select 0;};
 _radius = if(count _this > 1) then {_this select 1;} else {2;};
