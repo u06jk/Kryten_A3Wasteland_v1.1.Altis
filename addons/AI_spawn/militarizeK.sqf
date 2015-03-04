@@ -14,9 +14,9 @@ _radius = if(count _this > 1) then {_this select 1;} else {2;};
 _customInit = if (count _this > 2) then {_this select 2;} else {nil;}; if(!isNil("_customInit")) then {if(_customInit == "nil0") then {_customInit = nil;};};
 _grpId = if(count _this > 3) then {_this select 3;} else {nil;};
 
-if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
-if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
-if(isNil("LV_fullLandVehicle"))then{LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
+if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
+if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
+if (isNil("LV_fullLandVehicle")) then {LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
