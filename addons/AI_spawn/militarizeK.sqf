@@ -89,13 +89,7 @@ _createLandVehicle =
 		sleep 0.3;
 	};
 
-	_driver = driver _vehicle;
-
-	diag_log format ["Vehicle '%1'", _vehicle];
-	diag_log format ["Crew '%1'", crew _vehicle];
-	diag_log format ["Driver '%1'", _driver];
-
-	_driver
+	_vehicle
 };
 
 private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicle","_driver"];
@@ -230,16 +224,13 @@ if (_vehAmount > 0) then {
 			};
 		};
 		
-		diag_log "_createLandVehicle in";
-		_driver = [_pos] call _createLandVehicle;
-		diag_log "_createLandVehicle out";
+		_vehicle = [_pos] call _createLandVehicle;
 		
-		//nul = [vehicle _driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
+		nul = [_vehicle, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
-		//_vehicle = vehicle _driver;
-        //_vehicle allowDamage false;
+		_vehicle allowDamage false;
         
-        //_allUnitsArray set [(count _allUnitsArray), _vehicle];
+        _allUnitsArray set [(count _allUnitsArray), _vehicle];
 	};
 };
 
