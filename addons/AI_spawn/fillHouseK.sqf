@@ -1,6 +1,5 @@
 /*
 marker
-radius
 customInit
 groupId
 */
@@ -12,7 +11,8 @@ _findNearBuidlings =
 	private ["_marker","_radius","_center","_buildingObjects","_buildings"];
 	
 	_marker = _this select 0;
-	_radius = _this select 1;
+	
+	_radius = 50;
 	
 	diag_log format ["Finding buildings for '%1' within '%2'", _marker, _radius];
 	
@@ -33,12 +33,11 @@ _findNearBuidlings =
 	_buildings;
 };
 
-private ["_marker","_radius","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_newPos","_unit","_weapon"];
+private ["_marker","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_newPos","_unit","_weapon"];
 
 _marker = _this select 0;
-_radius = _this select 1;
-_customInit = _this select 2; if (!isNil("_customInit")) then {if (_customInit == "nil0") then {_customInit = nil;};};
-_grpId = _this select 3;
+_customInit = _this select 1; if (!isNil("_customInit")) then {if (_customInit == "nil0") then {_customInit = nil;};};
+_grpId = _this select 2;
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 
@@ -48,7 +47,7 @@ _menAmount = 2 + (ceil (random 2));
 
 diag_log format ["Creating guards for '%1' with '%2' men", _marker, _menAmount];
 
-_buildings = [_marker, _radius] call _findNearBuidlings;
+_buildings = [_marker] call _findNearBuidlings;
 
 if (isNil("_buildings")) exitWith{diag_log "No buildings found!"};
 if (count _buildings == 0) exitWith{};

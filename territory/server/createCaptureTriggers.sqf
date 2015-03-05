@@ -24,7 +24,7 @@ if (!isServer) exitWith {};
 			
             //Set default guards
 			_size = getMarkerSize _marker;
-			_radius = (_size select 0) max (_size select 1);
+			_radius = (_size select 0) min (_size select 1);
 			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 			_groupID = nil;
 			
@@ -40,22 +40,18 @@ if (!isServer) exitWith {};
 	if (["GunStore", _marker] call fn_startsWith) then
 	{
 		//Set default guards
-		_size = getMarkerSize _marker;
-		_radius = (_size select 0) max (_size select 1);
 		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 		_groupID = nil;
 		
-		[_marker, _radius, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
+		[_marker, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
 	};
 	
 	if (["GenStore", _marker] call fn_startsWith) then
 	{
 		//Set default guards
-		_size = getMarkerSize _marker;
-		_radius = (_size select 0) max (_size select 1);
 		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 		_groupID = nil;
 		
-		[_marker, _radius, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
+		[_marker, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
 	};
 } forEach allMapMarkers;
