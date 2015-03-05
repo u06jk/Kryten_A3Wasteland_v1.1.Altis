@@ -25,6 +25,8 @@ diag_log format ["Creating guards for '%1' with '%2' men", _marker, _menAmount];
 
 _buildings = ["all in radius", _marker, _radius] call LV_nearestBuilding;
 
+diag_log format ["Buildings '%1'", _buildings];
+
 if (isNil("_buildings")) exitWith{};
 if (count _buildings == 0) exitWith{};
 
@@ -39,6 +41,8 @@ while {_a < (count _buildings)} do {
 	};
 	_a = _a + 1;
 };
+
+diag_log format ["Building Positions '%1'", _buildingPositions];
 
 _milHQ = createCenter east;
 _milGroup = createGroup east;
@@ -122,9 +126,10 @@ if (_menAmount > 0) then {
 		_unit spawn addMilCap;
 		_unit spawn refillPrimaryAmmo;
 		
-		nul = [_unit] execVM "addons\AI_spawn\patrol-vG.sqf"; 
-		
 		nul = [_unit, 0.75] call LV_ACskills;
+		
+		nul = [_unit] execVM "addons\AI_spawn\patrol-vG.sqf"; 
+				
 		if (!isNil("_customInit")) then { 
 			nul = [_unit,_customInit] spawn LV_vehicleInit;
 		};
