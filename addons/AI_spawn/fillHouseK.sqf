@@ -33,13 +33,14 @@ _findNearBuidlings =
 	_buildings;
 };
 
-private ["_marker","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_newPos","_unit","_weapon"];
+private ["_marker","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_pos","_unit","_weapon"];
 
 _marker = _this select 0;
 _customInit = _this select 1; if (!isNil("_customInit")) then {if (_customInit == "nil0") then {_customInit = nil;};};
 _grpId = _this select 2;
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
+if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
@@ -71,11 +72,11 @@ _milGroup = createGroup east;
 
 if (_menAmount > 0) then {
 	for "_i2" from 1 to _menAmount do {
-		_newPos = _buildingPositions select floor (random count _buildingPositions);
-		if (_menAmount < count _buildingPositions) then {_buildingPositions = _buildingPositions - [_newPos];};
+		_pos = _buildingPositions select floor (random count _buildingPositions);
+		if (_menAmount < count _buildingPositions) then {_buildingPositions = _buildingPositions - [_pos];};
 		
 		_unit = _milGroup createUnit ["O_Soldier_A_F", _pos, [], 0, "NONE"];
-		_unit setPos _newPos;
+		_unit setPos _pos;
 		
 		removeAllWeapons _unit;
 		removeAllAssignedItems _unit;
@@ -153,7 +154,7 @@ if (_menAmount > 0) then {
 		nul = [_unit] execVM "addons\AI_spawn\patrol-vG.sqf"; 
 				
 		if (!isNil("_customInit")) then { 
-			nul = [_unit,_customInit] spawn LV_vehicleInit;
+			nul = [_unit, _customInit] spawn LV_vehicleInit;
 		};
 	};
 };
