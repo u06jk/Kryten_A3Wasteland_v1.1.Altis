@@ -16,7 +16,8 @@ _grpId = if(count _this > 3) then {_this select 3;} else {nil;};
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
-if (isNil("LV_fullLandVehicle")) then {LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
+//if (isNil("LV_fullLandVehicle")) then {LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
+if (isNil("LV_landVehicleK")) then {LV_landVehicleK = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_landVehicleK.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
@@ -139,7 +140,8 @@ if (_vehAmount > 0) then {
 			};
 		};
 		
-		_driver = [_pos, 1] call LV_fullLandVehicle;
+		//_driver = [_pos, 1] call LV_fullLandVehicle;
+		_driver = [_pos] call LV_landVehicleK;
 		nul = [vehicle _driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
 		_vehicle = vehicle _driver;
