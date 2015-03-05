@@ -80,15 +80,11 @@ _createLandVehicle =
 			case 1: {
 				_unit moveInDriver _vehicle;
 			};
-			case 2: {
-				_unit moveInTurret _vehicle;
-			};
-			case 3: {
-				_unit moveInCommander _vehicle;
+			
+			default {
+				_unit moveInCargo _vehicle;
 			};
 		};
-		
-		//_unit moveInCargo _vehicle;
 		
 		sleep 0.3;
 	};
