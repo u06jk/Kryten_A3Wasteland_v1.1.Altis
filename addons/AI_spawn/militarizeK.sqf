@@ -140,7 +140,9 @@ if (_vehAmount > 0) then {
 			};
 		};
 		
+		diag_log "LV_landVehicleK in";
 		_driver = [_pos] call LV_landVehicleK;
+		diag_log "LV_landVehicleK out";
 		
 		//nul = [vehicle _driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
