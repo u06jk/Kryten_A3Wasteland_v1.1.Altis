@@ -7,6 +7,32 @@ groupId
 
 if (!isServer)exitWith{};
 
+_findNearBuidlings = 
+{
+	private ["_marker","_radius","_center","_buildingObjects","_buildings"];
+	
+	_marker = _this select 0;
+	_radius = _this select 1;
+	
+	diag_log format ["Finding buildings for '%1' within '%2'", _marker, _radius];
+	
+	_center = getMarkerPos _marker;
+	
+	_buildingObjects = nearestObjects [_center, ["building"], _radius];
+	
+	if (isNil("_buildingObjects")) exitWith{diag_log "No building objects found!"};
+	if (count _buildingObjects == 0) exitWith{};
+	
+	_buildings = [];
+	{
+		if (str (_x buildingPos 0) != "[0,0,0]") then {_buildings set[(count _buildings), _x];};
+	} forEach _buildingObjects;
+	
+	if (count _buildings == 0) exitWith{diag_log "No buildings found!"};
+	
+	_buildings;
+};
+
 private ["_marker","_radius","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_newPos","_unit","_weapon"];
 
 _marker = if(count _this > 0) then {_this select 0;};
@@ -15,7 +41,6 @@ _customInit = if (count _this > 2) then {_this select 2;} else {nil;}; if(!isNil
 _grpId = if(count _this > 3) then {_this select 3;} else {nil;};
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
-if (isNil("LV_nearestBuilding")) then {LV_nearestBuilding = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_nearestBuilding.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
@@ -23,11 +48,9 @@ _menAmount = 2 + (ceil (random 2));
 
 diag_log format ["Creating guards for '%1' with '%2' men", _marker, _menAmount];
 
-_buildings = ["all in radius", _marker, _radius] call LV_nearestBuilding;
+_buildings = [_marker, _radius] call _findNearBuidlings;
 
-diag_log format ["Buildings '%1'", _buildings];
-
-if (isNil("_buildings")) exitWith{};
+if (isNil("_buildings")) exitWith{diag_log "No buildings found!"};
 if (count _buildings == 0) exitWith{};
 
 _buildingPositions = [];
