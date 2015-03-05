@@ -82,7 +82,15 @@ _createLandVehicle =
 			};
 			
 			default {
-				_unit moveInCargo _vehicle;
+				if (_vehicle emptyPositions "gunner" > 0) then {
+					_unit moveInGunner _vehicle;
+				} else {
+					if (_vehicle emptyPositions "commander" > 0) then {
+						_unit moveInCargo _vehicle;
+					} else {
+						_unit moveInCargo _vehicle;
+					};
+				};
 			};
 		};
 		
@@ -101,7 +109,6 @@ _grpId = if(count _this > 3) then {_this select 3;} else {nil;};
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
-//if (isNil("LV_fullLandVehicle")) then {LV_fullLandVehicle = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_fullLandVehicle.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
