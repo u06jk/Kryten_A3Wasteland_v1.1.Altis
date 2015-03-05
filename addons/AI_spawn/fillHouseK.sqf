@@ -35,10 +35,10 @@ _findNearBuidlings =
 
 private ["_marker","_radius","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_newPos","_unit","_weapon"];
 
-_marker = if(count _this > 0) then {_this select 0;};
-_radius = if(count _this > 1) then {_this select 1;} else {2;};
-_customInit = if (count _this > 2) then {_this select 2;} else {nil;}; if(!isNil("_customInit")) then {if(_customInit == "nil0") then {_customInit = nil;};};
-_grpId = if(count _this > 3) then {_this select 3;} else {nil;};
+_marker = _this select 0;
+_radius = _this select 1;
+_customInit = _this select 2; if (!isNil("_customInit")) then {if (_customInit == "nil0") then {_customInit = nil;};};
+_grpId = _this select 3;
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 
