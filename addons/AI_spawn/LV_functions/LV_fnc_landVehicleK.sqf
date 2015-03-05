@@ -67,19 +67,21 @@ for "_i" from 1 to _spots do {
 	_unit spawn addMilCap;
 	_unit spawn refillPrimaryAmmo;
 	
-	nul = [_x, 0.75] call LV_ACskills;
+	nul = [_unit, 0.75] call LV_ACskills;
 	
 	switch (_i) do {
 		case 1: {
-			_unit moveInDriver _vehicle
+			_unit moveInDriver _vehicle;
 		};
 		case 2: {
-			_unit moveInTurret _vehicle
+			_unit moveInTurret _vehicle;
 		};
 		case 3: {
-			_unit moveInCommander _vehicle
+			_unit moveInCommander _vehicle;
 		};
 	};
+	
+	sleep 0.3;
 };
 
 _driver = driver _vehicle;
