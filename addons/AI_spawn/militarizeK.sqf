@@ -22,7 +22,7 @@ if (isNil("LV_landVehicleK")) then {LV_landVehicleK = compile preprocessFile "ad
 _centerPos = getMarkerPos _marker;
 
 _menAmount = 5 + (ceil (random 5));
-_vehAmount = (ceil (random 3));
+_vehAmount = (ceil (random 2));
 _menAmount = _menAmount - _vehAmount;
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
@@ -140,19 +140,14 @@ if (_vehAmount > 0) then {
 			};
 		};
 		
-		//_driver = [_pos, 1] call LV_fullLandVehicle;
 		_driver = [_pos] call LV_landVehicleK;
 		
-		diag_log format ["Driver '%1'", _driver];
+		//nul = [vehicle _driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
 		
-		nul = [vehicle _driver, _pos] execVM 'addons\AI_spawn\patrol-vE.sqf';
-		
-		_vehicle = vehicle _driver;
-        _vehicle allowDamage false;
+		//_vehicle = vehicle _driver;
+        //_vehicle allowDamage false;
         
-        _allUnitsArray set [(count _allUnitsArray), _vehicle];
-        
-		(units(group _driver)) joinSilent _milGroup; 
+        //_allUnitsArray set [(count _allUnitsArray), _vehicle];
 	};
 };
 

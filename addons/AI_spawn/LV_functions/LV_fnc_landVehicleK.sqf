@@ -86,7 +86,10 @@ for "_i" from 1 to _spots do {
 	sleep 0.3;
 };
 
-diag_log format ["Crew '%1'", crew _vehicle];
-
 _driver = driver _vehicle;
+
+diag_log format ["Vehicle '%1'", _vehicle];
+diag_log format ["Crew '%1'", crew _vehicle];
+diag_log format ["Driver '%1'", _driver];
+
 _driver
