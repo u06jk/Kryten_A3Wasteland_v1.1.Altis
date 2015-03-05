@@ -69,7 +69,7 @@ for "_i" from 1 to _spots do {
 	
 	nul = [_unit, 0.75] call LV_ACskills;
 	
-	switch (_i) do {
+	/*switch (_i) do {
 		case 1: {
 			_unit moveInDriver _vehicle;
 		};
@@ -79,10 +79,14 @@ for "_i" from 1 to _spots do {
 		case 3: {
 			_unit moveInCommander _vehicle;
 		};
-	};
+	};*/
+	
+	_unit moveInCargo _vehicle;
 	
 	sleep 0.3;
 };
+
+diag_log format ["Crew '%1'", crew _vehicle];
 
 _driver = driver _vehicle;
 _driver
