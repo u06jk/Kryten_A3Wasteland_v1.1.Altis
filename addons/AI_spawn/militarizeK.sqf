@@ -14,7 +14,7 @@ _createLandVehicle =
 	_position = _this select 0;
 
 	_vehicles = ["O_MBT_02_arty_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_AA_F","O_APC_Tracked_02_cannon_F","O_MBT_02_cannon_F"];
-	_vehiclesSeats = [3,2,2,3,3,3,3]
+	_vehiclesSeats = [3,2,2,3,3,3,3];
 
 	_milHQ = createCenter east;
 	_milGroup = createGroup east;
@@ -76,7 +76,7 @@ _createLandVehicle =
 		
 		nul = [_unit, 0.75] call LV_ACskills;
 		
-		/*switch (_i) do {
+		switch (_i) do {
 			case 1: {
 				_unit moveInDriver _vehicle;
 			};
@@ -86,9 +86,9 @@ _createLandVehicle =
 			case 3: {
 				_unit moveInCommander _vehicle;
 			};
-		};*/
+		};
 		
-		_unit moveInCargo _vehicle;
+		//_unit moveInCargo _vehicle;
 		
 		sleep 0.3;
 	};
