@@ -12,7 +12,7 @@ _findNearBuidlings =
 	
 	_marker = _this select 0;
 	
-	_radius = 50;
+	_radius = 15;
 	
 	diag_log format ["Finding buildings for '%1' within '%2'", _marker, _radius];
 	
