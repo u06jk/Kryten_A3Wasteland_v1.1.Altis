@@ -14,13 +14,11 @@ _findNearBuidlings =
 	
 	_radius = 15;
 	
-	diag_log format ["Finding buildings for '%1' within '%2'", _marker, _radius];
-	
 	_center = getMarkerPos _marker;
 	
 	_buildingObjects = nearestObjects [_center, ["building"], _radius];
 	
-	if (isNil("_buildingObjects")) exitWith{diag_log "No building objects found!"};
+	if (isNil("_buildingObjects")) exitWith{diag_log format ["No buildings found for '%1' within '%2'", _marker, _radius]};
 	if (count _buildingObjects == 0) exitWith{};
 	
 	_buildings = [];
@@ -64,8 +62,6 @@ while {_a < (count _buildings)} do {
 	};
 	_a = _a + 1;
 };
-
-diag_log format ["Building Positions '%1'", _buildingPositions];
 
 _milHQ = createCenter east;
 _milGroup = createGroup east;
