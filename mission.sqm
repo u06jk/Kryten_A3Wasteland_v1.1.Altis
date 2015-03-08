@@ -92,8 +92,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="A3Wasteland Altis v1.1"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
+		briefingName="Kryten A3Wasteland Altis v1.1"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
+		overviewText="Wasteland survival sandbox by Kryten";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
 		startWeather=0;
@@ -2382,7 +2382,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=174;
+		items=190;
 		class Item0
 		{
 			position[]={3612.1487,12.11851,13020.892};
@@ -3700,6 +3700,118 @@ class Mission
 			name="VehStore5_seaSpawn";
 			type="Empty";
 			colorName="ColorBlack";
+		};
+		class Item174
+		{
+			position[]={3870,16.210089,17470};
+			name="Town_31";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item175
+		{
+			position[]={10330,126.46013,19060};
+			name="Town_32";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item176
+		{
+			position[]={10460,86.863388,17290};
+			name="Town_33";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item177
+		{
+			position[]={12822,43.370003,19641};
+			name="Town_34";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item178
+		{
+			position[]={14455,19.764,17641};
+			name="Town_35";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item179
+		{
+			position[]={16656,17.52602,16127};
+			name="Town_36";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item180
+		{
+			position[]={12943,28.633358,15041};
+			name="Town_37";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item181
+		{
+			position[]={17848,2.004668,18118};
+			name="Town_38";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item182
+		{
+			position[]={11132,41.072723,14557};
+			name="Town_39";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item183
+		{
+			position[]={11770,12.930024,13700};
+			name="Town_40";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item184
+		{
+			position[]={10616,15.467348,12267};
+			name="Town_41";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item185
+		{
+			position[]={3720,11.128642,10241};
+			name="Town_42";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item186
+		{
+			position[]={3962,21.476824,11638};
+			name="Town_43";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item187
+		{
+			position[]={11750,52.485371,18252};
+			name="Town_44";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item188
+		{
+			position[]={7394,55.829334,15395};
+			name="Town_45";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item189
+		{
+			position[]={23193,14.190002,19977};
+			name="Town_46";
+			type="Empty";
+			colorName="ColorRed";
 		};
 	};
 };
