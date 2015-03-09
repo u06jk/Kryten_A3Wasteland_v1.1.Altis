@@ -27,7 +27,7 @@ _exclVehicleIDs = [];
 	if (isNil "_hoursUnused") then { _hoursUnused = 0 };
 	_valid = false;
 	
-	_playerBought = false;
+	/*_playerBought = false;
 	_isUnused = false;
 	
 	{
@@ -42,9 +42,9 @@ _exclVehicleIDs = [];
 		{
 			_isUnused = true;
 		}
-	};
+	};*/
 
-	if (!isNil "_class" && !isNil "_pos" && {count _pos == 3 && (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) && _isUnused}) then
+	if (!isNil "_class" && !isNil "_pos" && {count _pos == 3 && (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) && (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime)}) then
 	{
 		_vehCount = _vehCount + 1;
 		_valid = true;
