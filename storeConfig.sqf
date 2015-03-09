@@ -796,7 +796,10 @@ colorsArray = compileFinal str
 			["Sierra Whiskey Wild Dogs", _texDir + "swwd.jpg"],
 			["Skulls", _texDir + "skulls.jpg"],
 			["Zebra", _texDir + "zebra.jpg"],
-			["Hello Kitty", _texDir + "kitty.jpg"]
+			["Hello Kitty", _texDir + "kitty.jpg"],
+			["LoCo", _texDir + "swissflec.jpg"],
+			["Russia", _texDir + "russia.jpg"],
+			["Cobra", _texDir + "cobra.jpg"]
 		]
 	],
 	[ // Kart colors

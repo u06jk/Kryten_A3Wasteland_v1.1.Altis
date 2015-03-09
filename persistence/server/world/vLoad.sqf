@@ -18,7 +18,7 @@ _vehicles = call compile preprocessFileLineNumbers format ["%1\getVehicles.sqf",
 _exclVehicleIDs = [];
 
 {
-	private ["_veh", "_vehicleID", "_class", "_pos", "_dir", "_vel", "_flying", "_damage", "_fuel", "_hitPoints", "_variables", "_textures", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_ammoCargo", "_fuelCargo", "_repairCargo", "_hoursAlive", "_hoursUnused", "_valid", "_playerBought","_isUnused","_playerOwner"];
+	private ["_veh", "_vehicleID", "_class", "_pos", "_dir", "_vel", "_flying", "_damage", "_fuel", "_hitPoints", "_variables", "_textures", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_ammoCargo", "_fuelCargo", "_repairCargo", "_hoursAlive", "_hoursUnused", "_valid", "_playerBought","_playerOwner"];
 
 	{ (_x select 1) call compile format ["%1 = _this", _x select 0]	} forEach _x;
 
@@ -27,24 +27,15 @@ _exclVehicleIDs = [];
 	if (isNil "_hoursUnused") then { _hoursUnused = 0 };
 	_valid = false;
 	
-	/*_playerBought = false;
-	_isUnused = false;
+	_playerBought = false;
 	
 	{
 		if (_x select 0 == "ownerUID") then {
 			_playerBought = true;
 		};
 	} forEach _variables;
-	
-	if (!_playerBought) then
-	{
-		if (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime) then
-		{
-			_isUnused = true;
-		}
-	};*/
 
-	if (!isNil "_class" && !isNil "_pos" && {count _pos == 3 && (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) && (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime)}) then
+	if (!isNil "_class" && !isNil "_pos" && {count _pos == 3 && (((_maxLifetime <= 0 || _hoursAlive < _maxLifetime) && (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime)) || _playerBought)}) then
 	{
 		_vehCount = _vehCount + 1;
 		_valid = true;
