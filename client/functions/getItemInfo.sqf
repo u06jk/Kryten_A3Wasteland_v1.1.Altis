@@ -99,8 +99,6 @@ if (!isNil "_itemEntry") then
 	_price = _itemEntry select 2;
 	_weapon = configFile >> _parentCfg >> _itemType;
 	
-	_price = _price * 3;
-
 	// Set custom name and/or description
 	if (count _itemEntry > 3) then
 	{
@@ -235,6 +233,8 @@ if (_description == "" && {!isNil "_weapon"} && {isClass _weapon}) then
 {
 	_description = getText (_weapon >> "descriptionShort");
 };
+
+_price = _price * 3;
 
 // Return
 [_parentCfg, _price, _description, _showAmmo]

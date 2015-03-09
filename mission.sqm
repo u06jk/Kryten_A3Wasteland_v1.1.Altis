@@ -2382,7 +2382,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=190;
+		items=204;
 		class Item0
 		{
 			position[]={3612.1487,12.11851,13020.892};
@@ -3812,6 +3812,105 @@ class Mission
 			name="Town_46";
 			type="Empty";
 			colorName="ColorRed";
+		};
+		
+		class Item190
+		{
+			position[]={11533.004,19.738714,9433.5479};
+			name="GenStore1";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item191
+		{
+			position[]={20786.578,35.678844,6807.8887};
+			name="GenStore2";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item192
+		{
+			position[]={18087.299,25.083857,15245.804};
+			name="GenStore3";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item193
+		{
+			position[]={9268.7627,120.79372,15868.939};
+			name="GenStore4";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item194
+		{
+			position[]={4565.4165,299.69217,21384.393};
+			name="GenStore5";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item195
+		{
+			position[]={3366.886,2.6602368,13206.772};
+			name="GunStore1";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item196
+		{
+			position[]={16708.83,18.712267,12779.239};
+			name="GunStore2";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item197
+		{
+			position[]={25786.891,20.233345,21354.854};
+			name="GunStore3";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item198
+		{
+			position[]={9435.292,125.51097,20267.016};
+			name="GunStore4";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item199
+		{
+			position[]={26712.592,20.398693,24601.9};
+			name="VehStore1";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item200
+		{
+			position[]={22958.713,4.9242139,18878.971};
+			name="VehStore2";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item201
+		{
+			position[]={20761.709,28.229145,7264.2515};
+			name="VehStore3";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item202
+		{
+			position[]={14482.604,18.864084,16330.667};
+			name="VehStore4";
+			type="Empty";
+			colorName="ColorBlack";
+		};
+		class Item203
+		{
+			position[]={3971.4854,4.7541585,15072.055};
+			name="VehStore5";
+			type="Empty";
+			colorName="ColorBlack";
 		};
 	};
 };

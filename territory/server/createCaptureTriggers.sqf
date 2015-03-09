@@ -18,7 +18,7 @@ if (!isServer) exitWith {};
 	{
 		if ({_x select 0 == _marker} count (["config_territory_markers", []] call getPublicVar) > 0) then
 		{
-			diag_log format ["Creating territory capture trigger for '%1'", _marker];
+			diag_log format ["Creating territory capture trigger and guards for '%1'", _marker];
 			_trig = createTrigger ["EmptyDetector", markerPos _marker];
 			_trig setVariable ["captureTriggerMarker", _marker, true];
 			
@@ -41,6 +41,8 @@ if (!isServer) exitWith {};
 	{
 		if ((count _marker) == 9) then
 		{
+			diag_log format ["Creating guards for '%1'", _marker];
+			
 			//Set default guards
 			_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 			_groupID = nil;

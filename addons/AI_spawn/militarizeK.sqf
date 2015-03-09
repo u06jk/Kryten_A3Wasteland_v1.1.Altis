@@ -125,7 +125,7 @@ if (_vehMax > 0) then
 {
 	_vehAmount = (round (random _vehMax));
 	_menAmount = _menAmount - _vehAmount;
-}
+};
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
