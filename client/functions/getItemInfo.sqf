@@ -98,6 +98,8 @@ if (!isNil "_itemEntry") then
 	_itemType = _itemEntry select 1;
 	_price = _itemEntry select 2;
 	_weapon = configFile >> _parentCfg >> _itemType;
+	
+	_price = _price * 3;
 
 	// Set custom name and/or description
 	if (count _itemEntry > 3) then
