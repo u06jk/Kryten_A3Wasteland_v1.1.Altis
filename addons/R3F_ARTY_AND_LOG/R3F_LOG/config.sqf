@@ -146,6 +146,9 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_HBarrier_5_F", 5],
 	["Land_LampHarbour_F", 2],
 	["Land_LampShabby_F", 2],
+	["Land_LampAirport_F", 5],
+	["Land_LampHalogen_F", 3],
+	["Land_LampStadium_F", 5],
 	["Land_MetalBarrel_F", 2],
 	["Land_Mil_ConcreteWall_F", 5],
 	["Land_Mil_WallBig_4m_F", 5],
@@ -166,6 +169,9 @@ R3F_LOG_CFG_objets_transportables =
 
 R3F_LOG_CFG_objets_deplacables =
 [
+	"Land_LampAirport_F",
+	"Land_LampHalogen_F",
+	"Land_LampStadium_F",
 	"StaticWeapon",
 	"ReammoBox_F",
 	"Kart_01_Base_F",
