@@ -54,7 +54,7 @@ _buildings = [_marker] call _findNearBuidlings;
 
 if (isNil("_buildings")) exitWith 
 {
-	diag_log "No buildings found switching to militarize!"
+	diag_log format ["No buildings found switching to militarize for '%1'!", _marker];
 	[_marker, 10, 2, 2, 0, _customInit, _grpId] execVM "addons\AI_spawn\militarizeK.sqf";
 };
 

@@ -35,7 +35,7 @@ _exclVehicleIDs = [];
 	if ((count _playerOwner) > 0) then
 	{
 		_playerBought = true;
-	}
+	};
 	
 	if (!_playerBought) then
 	{
@@ -43,7 +43,7 @@ _exclVehicleIDs = [];
 		{
 			_isUnused = true;
 		}
-	}
+	};
 
 	if (!isNil "_class" && !isNil "_pos" && {count _pos == 3 && (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) && _isUnused}) then
 	{
