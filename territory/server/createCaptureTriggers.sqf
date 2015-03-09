@@ -37,16 +37,7 @@ if (!isServer) exitWith {};
 		};
 	};
 	
-	if (["GunStore", _marker] call fn_startsWith) then
-	{
-		//Set default guards
-		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
-		_groupID = nil;
-		
-		[_marker, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
-	};
-	
-	if (["GenStore", _marker] call fn_startsWith) then
+	if ((["GunStore", _marker] call fn_startsWith) or (["GenStore", _marker] call fn_startsWith) or (["VehStore", _marker] call fn_startsWith)) then
 	{
 		//Set default guards
 		_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
@@ -55,3 +46,8 @@ if (!isServer) exitWith {};
 		[_marker, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
 	};
 } forEach allMapMarkers;
+
+// Create random group in cities.
+//_cityCount = (count (call cityList)) / 5;
+
+//_randomLoc = (call cityList) call BIS_fnc_selectRandom;
