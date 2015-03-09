@@ -1,5 +1,7 @@
 /*
 marker
+menMax
+menRandomMax
 customInit
 groupId
 */
@@ -31,25 +33,32 @@ _findNearBuidlings =
 	_buildings;
 };
 
-private ["_marker","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_pos","_unit","_weapon"];
+private ["_marker","_menMax","_menRandomMax","_customInit","_grpId","_milHQ","_milGroup","_buildings","_buildingPositions","_a","_building","_i","_i2","_pos","_unit","_weapon"];
 
 _marker = _this select 0;
-_customInit = _this select 1; if (!isNil("_customInit")) then {if (_customInit == "nil0") then {_customInit = nil;};};
-_grpId = _this select 2;
+_menMax = _this select 1;
+_menRandomMax = _this select 2;
+_customInit = _this select 3; if (!isNil("_customInit")) then {if (_customInit == "nil0") then {_customInit = nil;};};
+_grpId = _this select 4;
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
-_menAmount = 2 + (ceil (random 2));
+_menAmount = _menMax + (ceil (random _menRandomMax));
 
 diag_log format ["Creating guards for '%1' with '%2' men", _marker, _menAmount];
 
 _buildings = [_marker] call _findNearBuidlings;
 
-if (isNil("_buildings")) exitWith{diag_log "No buildings found!"};
-if (count _buildings == 0) exitWith{};
+if (isNil("_buildings")) exitWith 
+{
+	diag_log "No buildings found switching to militarize!"
+	[_marker, 10, 2, 2, 0, _customInit, _grpId] execVM "addons\AI_spawn\militarizeK.sqf";
+};
+
+if (count _buildings == 0) exitWith {};
 
 _buildingPositions = [];
 _a = 0;

@@ -1,6 +1,9 @@
 /*
 marker
 radius
+menMax
+menRandomMax
+vehMax
 customInit
 groupId
 */
@@ -100,21 +103,29 @@ _createLandVehicle =
 	_vehicle
 };
 
-private ["_marker","_radius","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicle","_driver"];
+private ["_marker","_radius","_menMax","_menRandomMax","_vehMax","_customInit","_grpId","_centerPos","_menAmount","_vehAmount","_allUnitsArray","_milHQ","_milGroup","_validPos","_dir","_range","_pos","_unit","_weapon","_thisArray","_vehicle","_driver"];
 
 _marker = _this select 0;
 _radius = _this select 1;
-_customInit = _this select 2; if(!isNil("_customInit")) then {if(_customInit == "nil0") then {_customInit =nil;};};
-_grpId = _this select 3;
+_menMax = _this select 2;
+_menRandomMax = _this select 3;
+_vehMax = _this select 4;
+_customInit = _this select 5; if(!isNil("_customInit")) then {if(_customInit == "nil0") then {_customInit =nil;};};
+_grpId = _this select 6;
 
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
-_menAmount = 5 + (round (random 5));
-_vehAmount = (round (random 2));
-_menAmount = _menAmount - _vehAmount;
+_menAmount = _menMax + (round (random _menRandomMax));
+_vehAmount = 0;
+
+if (_vehMax > 0) then
+{
+	_vehAmount = (round (random _vehMax));
+	_menAmount = _menAmount - _vehAmount;
+}
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
