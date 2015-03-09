@@ -39,6 +39,8 @@ if (!isServer) exitWith {};
 	
 	if ((["GunStore", _marker] call fn_startsWith) or (["GenStore", _marker] call fn_startsWith) or (["VehStore", _marker] call fn_startsWith)) then
 	{
+		diag_log format ["Marker: '%1'", _marker];
+	
 		if ((count _marker) == 9) then
 		{
 			diag_log format ["Creating guards for '%1'", _marker];

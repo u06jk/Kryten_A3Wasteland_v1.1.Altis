@@ -39,7 +39,7 @@ _exclVehicleIDs = [];
 	
 	if (!_playerBought) then
 	{
-		if ((_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime) then
+		if (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime) then
 		{
 			_isUnused = true;
 		}

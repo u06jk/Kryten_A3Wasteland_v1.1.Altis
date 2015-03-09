@@ -113,19 +113,16 @@ _vehMax = _this select 4;
 _customInit = _this select 5; if(!isNil("_customInit")) then {if(_customInit == "nil0") then {_customInit =nil;};};
 _grpId = _this select 6;
 
+diag_log format ["militarizeK called with '%1', '%2', '%3', '%4', '%5', '%6', '%7'", _marker, _radius, _menMax, _menRandomMax, _vehMax, _customInit, _grpId];
+
 if (isNil("LV_ACskills")) then {LV_ACskills = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_ACskills.sqf";};
 if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addons\AI_spawn\LV_functions\LV_fnc_vehicleInit.sqf";};
 
 _centerPos = getMarkerPos _marker;
 
 _menAmount = _menMax + (round (random _menRandomMax));
-_vehAmount = 0;
-
-if (_vehMax > 0) then
-{
-	_vehAmount = (round (random _vehMax));
-	_menAmount = _menAmount - _vehAmount;
-};
+_vehAmount = (round (random _vehMax));
+_menAmount = _menAmount - _vehAmount;
 
 diag_log format ["Creating guards for '%1' with '%2' men and '%3' vehicles", _marker, _menAmount, _vehAmount];
 
