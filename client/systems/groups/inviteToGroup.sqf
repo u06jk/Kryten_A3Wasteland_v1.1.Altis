@@ -25,7 +25,7 @@ _hasInvite = false;
 //Check selected data is valid
 { if (getPlayerUID _x == _playerData) exitWith { _target = _x } } forEach (call allPlayers);
 
-diag_log "Invite to group: Before the checks";
+//diag_log "Invite to group: Before the checks";
 
 //Checks
 if(isNil "_target") exitWith {player globalChat "you must select someone to invite first"};
@@ -35,7 +35,7 @@ if((count units group _target) > 1) exitWith {player globalChat "This player is 
 { if (_x select 1 == getPlayerUID _target) then { _hasInvite = true } } forEach currentInvites;
 if(_hasInvite) exitWith {player globalChat "This player already has a pending invite"};
 
-diag_log "Invite to group: After the checks";
+//diag_log "Invite to group: After the checks";
 
 //currentInvites pushBack [getPlayerUID player, getPlayerUID _target];
 //publicVariable "currentInvites";
