@@ -30,12 +30,11 @@ _exclVehicleIDs = [];
 	_playerBought = false;
 	_isUnused = false;
 	
-	_playerOwner = _veh getVariable ["ownerUID", ""];
-	
-	if ((count _playerOwner) > 0) then
 	{
-		_playerBought = true;
-	};
+		if (_x select 0 == "ownerUID") then {
+			_playerBought = true;
+		};
+	} forEach _variables;
 	
 	if (!_playerBought) then
 	{
