@@ -37,22 +37,14 @@ _exclVehicleIDs = [];
 	
 	_keepVehicle = false;
 	
-	if (!isNil "_class") then
-	{
-		if (!isNil "_pos") then
-		{
-			if (count _pos == 3) then
-			{
-				if (_playerBought)
-				{
+	if (!isNil "_class") then {
+		if (!isNil "_pos") then	{
+			if ({count _pos == 3}) then	{
+				if (_playerBought) then	{
 					_keepVehicle = true;
-				}
-				else
-				{
-					if (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) then
-					{
-						if (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime) then
-						{
+				} else {
+					if (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) then {
+						if (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime) then {
 							_keepVehicle = true;
 						};
 					};
