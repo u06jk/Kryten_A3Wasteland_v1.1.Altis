@@ -20,9 +20,6 @@ _exclVehicleIDs = [];
 {
 	private ["_veh", "_vehicleID", "_class", "_pos", "_dir", "_vel", "_flying", "_damage", "_fuel", "_hitPoints", "_variables", "_textures", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_ammoCargo", "_fuelCargo", "_repairCargo", "_hoursAlive", "_hoursUnused", "_valid", "_playerBought","_playerOwner","_keepVehicle","_i","_temp"];
 	
-	["Vehicle %1", _x] call BIS_fnc_logFormat;
-	["Variables %1", _variables] call BIS_fnc_logFormat;
-
 	{ (_x select 1) call compile format ["%1 = _this", _x select 0]	} forEach _x;
 
 	if (isNil "_flying") then { _flying = 0 };
@@ -31,17 +28,13 @@ _exclVehicleIDs = [];
 	_valid = false;
 	
 	_playerBought = false;
-	
-	for "_i" from 0 to (count _variables) - 1 do {
-		_temp = _variables select _i;
-		["Temp %1", _temp] call BIS_fnc_logFormat;
-		if (_temp select 0 == "ownerUID") then {
+	{
+		if (["owner", _x select 0] call fn_startsWith) then {
 			_playerBought = true;
 		};
-	};
+	} forEach _variables;
 	
 	_keepVehicle = false;
-	
 	if (!isNil "_class") then {
 		if (!isNil "_pos") then	{
 			if (count _pos == 3) then	{
@@ -57,8 +50,6 @@ _exclVehicleIDs = [];
 			};
 		};
 	};
-	
-	["Keep %1", _keepVehicle] call BIS_fnc_logFormat;
 
 	if (_keepVehicle) then
 	{
