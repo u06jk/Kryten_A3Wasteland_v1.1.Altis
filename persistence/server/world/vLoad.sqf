@@ -19,6 +19,8 @@ _exclVehicleIDs = [];
 
 {
 	private ["_veh", "_vehicleID", "_class", "_pos", "_dir", "_vel", "_flying", "_damage", "_fuel", "_hitPoints", "_variables", "_textures", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_ammoCargo", "_fuelCargo", "_repairCargo", "_hoursAlive", "_hoursUnused", "_valid", "_playerBought","_playerOwner","_keepVehicle"];
+	
+	diag_log format ["Vehicle: '%1'", _x];
 
 	{ (_x select 1) call compile format ["%1 = _this", _x select 0]	} forEach _x;
 
@@ -29,11 +31,15 @@ _exclVehicleIDs = [];
 	
 	_playerBought = false;
 	
+	diag_log format ["Variables: '%1'", _variables];
+	
 	{
 		if (_x select 0 == "ownerUID") then {
 			_playerBought = true;
 		};
 	} forEach _variables;
+	
+	diag_log format ["Player Bought: '%1'", _playerBought];
 	
 	_keepVehicle = false;
 	
@@ -52,6 +58,8 @@ _exclVehicleIDs = [];
 			};
 		};
 	};
+	
+	diag_log format ["Keep Vehicle: '%1'", _keepVehicle];
 
 	if (_keepVehicle) then
 	{
