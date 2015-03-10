@@ -1,3 +1,4 @@
+allowFunctionsLog = 1;
 respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
