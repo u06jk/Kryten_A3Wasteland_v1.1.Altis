@@ -55,7 +55,7 @@ _exclVehicleIDs = [];
 				}
 				else
 				{
-					if _maxLifetime <= 0 || _hoursAlive < _maxLifetime) then
+					if (_maxLifetime <= 0 || _hoursAlive < _maxLifetime) then
 					{
 						if (_maxUnusedTime <= 0 || _hoursUnused < _maxUnusedTime) then
 						{
