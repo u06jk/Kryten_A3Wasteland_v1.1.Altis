@@ -18,7 +18,7 @@ _vehicles = call compile preprocessFileLineNumbers format ["%1\getVehicles.sqf",
 _exclVehicleIDs = [];
 
 {
-	private ["_veh", "_vehicleID", "_class", "_pos", "_dir", "_vel", "_flying", "_damage", "_fuel", "_hitPoints", "_variables", "_textures", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_ammoCargo", "_fuelCargo", "_repairCargo", "_hoursAlive", "_hoursUnused", "_valid", "_playerBought","_playerOwner","_keepVehicle"];
+	private ["_veh", "_vehicleID", "_class", "_pos", "_dir", "_vel", "_flying", "_damage", "_fuel", "_hitPoints", "_variables", "_textures", "_weapons", "_magazines", "_items", "_backpacks", "_turretMags", "_turretMags2", "_turretMags3", "_ammoCargo", "_fuelCargo", "_repairCargo", "_hoursAlive", "_hoursUnused", "_valid", "_playerBought","_playerOwner","_keepVehicle","_i","_temp"];
 	
 	diag_log format ["Vehicle: '%1'", _x];
 
@@ -33,11 +33,12 @@ _exclVehicleIDs = [];
 	
 	diag_log format ["Variables: '%1'", _variables];
 	
-	{
-		if (_x select 0 == "ownerUID") then {
+	for "_i" from 1 to count _variables do {
+		_temp = _variables select _i - 1;
+		if (_temp select 0 == "ownerUID") then {
 			_playerBought = true;
 		};
-	} forEach _variables;
+	};
 	
 	diag_log format ["Player Bought: '%1'", _playerBought];
 	
@@ -45,7 +46,7 @@ _exclVehicleIDs = [];
 	
 	if (!isNil "_class") then {
 		if (!isNil "_pos") then	{
-			if ({count _pos == 3}) then	{
+			if (count _pos == 3) then	{
 				if (_playerBought) then	{
 					_keepVehicle = true;
 				} else {
