@@ -27,10 +27,6 @@ _exclVehicleIDs = [];
 	if (isNil "_hoursUnused") then { _hoursUnused = 0 };
 	_valid = false;
 	
-	diag_log format ["Check Vehicle: '%1'", _x];
-	
-	diag_log format ["Variables: '%1'", _variables];
-	
 	_playerBought = false;
 	
 	{
@@ -38,8 +34,6 @@ _exclVehicleIDs = [];
 			_playerBought = true;
 		};
 	} forEach _variables;
-	
-	diag_log format ["Player Vehicle: '%1'", _playerBought];
 	
 	_keepVehicle = false;
 	
@@ -66,8 +60,6 @@ _exclVehicleIDs = [];
 			};
 		};
 	};
-	
-	diag_log format ["Keep Vehicle: '%1'", _keepVehicle];
 
 	if (_keepVehicle) then
 	{
