@@ -34,7 +34,8 @@ _exclVehicleIDs = [];
 		};
 	} forEach _variables;
 	
-	_keepVehicle = false;
+	//_keepVehicle = false;
+	_keepVehicle = true;
 	if (!isNil "_class") then {
 		if (!isNil "_pos") then	{
 			if (count _pos == 3) then	{
