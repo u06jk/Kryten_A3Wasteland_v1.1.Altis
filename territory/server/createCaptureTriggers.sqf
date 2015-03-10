@@ -11,6 +11,8 @@
 
 if (!isServer) exitWith {};
 
+//_storeMarkers = [];
+
 {
 	_marker = _x;
 	
@@ -39,8 +41,6 @@ if (!isServer) exitWith {};
 	
 	if ((["GunStore", _marker] call fn_startsWith) or (["GenStore", _marker] call fn_startsWith) or (["VehStore", _marker] call fn_startsWith)) then
 	{
-		//diag_log format ["Marker: '%1'", _marker];
-	
 		if ((count _marker) == 9) then
 		{
 			diag_log format ["Creating guards for '%1'", _marker];
@@ -50,11 +50,15 @@ if (!isServer) exitWith {};
 			_groupID = nil;
 			
 			[_marker, 2, 2, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
+			
+			//_storeMarkers set [count _storeMarkers, _marker];
 		}
 	};
 } forEach allMapMarkers;
 
 // Create random group in cities.
+//_cities = call cityList; ???
+
 //_cityCount = (count (call cityList)) / 5;
 
 //_randomLoc = (call cityList) call BIS_fnc_selectRandom;

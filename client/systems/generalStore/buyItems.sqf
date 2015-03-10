@@ -130,6 +130,8 @@ storePurchaseHandle = _this spawn
 				{
 					_price = _x select 2;
 				};
+				
+				_price = _price * 3;
 
 				// Ensure the player has enough money
 				if (_price > _playerMoney) exitWith
@@ -277,6 +279,8 @@ storePurchaseHandle = _this spawn
 			{
 				_class = _x select 1;
 				_price = _x select 2;
+				
+				_price = _price * 3;
 
 				// Ensure the player has enough money
 				if (_price > _playerMoney) exitWith
@@ -296,6 +300,8 @@ storePurchaseHandle = _this spawn
 			if (_itemData == _x select 1) exitWith
 			{
 				_price = _x select 4;
+				
+				_price = _price * 3;
 
 				// Ensure the player has enough money
 				if (_price > _playerMoney) exitWith
@@ -325,6 +331,8 @@ storePurchaseHandle = _this spawn
 			{
 				_class = _x select 1;
 				_price = _x select 2;
+				
+				_price = _price * 3;
 
 				if (headgear player == _class) exitWith
 				{
@@ -353,6 +361,8 @@ storePurchaseHandle = _this spawn
 			{
 				_class = _x select 1;
 				_price = _x select 2;
+				
+				_price = _price * 3;
 
 				if (uniform player == _class) exitWith
 				{
@@ -386,6 +396,8 @@ storePurchaseHandle = _this spawn
 				{
 					_price = [_class] call getCapacity;
 				};
+				
+				_price = _price * 3;
 
 				if (vest player == _class) exitWith
 				{
@@ -414,6 +426,8 @@ storePurchaseHandle = _this spawn
 			{
 				_class = _x select 1;
 				_price = _x select 2;
+				
+				_price = _price * 3;
 
 				if (backpack player == _class) exitWith
 				{

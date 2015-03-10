@@ -539,7 +539,6 @@ genObjectsArray = compileFinal str
 	["Lamp Post (Shabby)", "Land_LampShabby_F", 100, "object"],
 	["Lamp Post (Airport)", "Land_LampAirport_F", 300, "object"],
 	["Lamp Post (Halogen)", "Land_LampHalogen_F", 200, "object"],
-	["Lamp Post (Decor)", "Land_LampDecor_F", 200, "object"],
 	["Boom Gate", "Land_BarGate_F", 150, "object"],
 	["Pipes", "Land_Pipes_Large_F", 200, "object"],
 	["Concrete Frame", "Land_CncShelter_F", 200, "object"],
