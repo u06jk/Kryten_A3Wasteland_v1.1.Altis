@@ -108,7 +108,6 @@ R3F_LOG_CFG_transporteurs =
 R3F_LOG_CFG_objets_transportables =
 [
 	["StaticWeapon", 5],
-	["Box_NATO_AmmoVeh_F", 10],
 	["B_supplyCrate_F", 5],
 	["ReammoBox_F", 3],
 	["Kart_01_Base_F", 5],
@@ -128,8 +127,8 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Canal_Wall_Stairs_F", 3],
 	["Land_CargoBox_V1_F", 5],
 	["Land_Cargo_Patrol_V1_F", 7],
-	["Land_Cargo_Tower_V1_F", 30],
-	["Land_Cargo_HQ_V1_F", 30], // Added on player request
+	["Land_Cargo_Tower_V1_F", 40],
+	["Land_Cargo_HQ_V1_F", 30],
 	["Land_CncBarrier_F", 4],
 	["Land_CncBarrierMedium_F", 4],
 	["Land_CncBarrierMedium4_F", 4],
@@ -161,13 +160,19 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Shoot_House_Wall_F", 3],
 	["Land_Stone_8m_F", 5],
 	["Land_ToiletBox_F", 2],
-	["Land_BarrelWater_F", 2]
+	["Land_BarrelWater_F", 2],
+	["Land_TentHangar_V1_F", 50],
+	["Land_Dome_Big_F", 60],
+	["Land_Dome_Small_F", 40]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
 
 R3F_LOG_CFG_objets_deplacables =
 [
+	"Land_TentHangar_V1_F",
+	"Land_Dome_Big_F",
+	"Land_Dome_Small_F",
 	"Land_LampAirport_F",
 	"Land_LampHalogen_F",
 	"Land_LampStadium_F",
@@ -192,7 +197,7 @@ R3F_LOG_CFG_objets_deplacables =
 	"Land_CargoBox_V1_F",
 	"Land_Cargo_Patrol_V1_F",
 	"Land_Cargo_Tower_V1_F",
-	"Land_Cargo_HQ_V1_F", // Added on player request
+	"Land_Cargo_HQ_V1_F",
 	"Land_CncBarrier_F",
 	"Land_CncBarrierMedium_F",
 	"Land_CncBarrierMedium4_F",
