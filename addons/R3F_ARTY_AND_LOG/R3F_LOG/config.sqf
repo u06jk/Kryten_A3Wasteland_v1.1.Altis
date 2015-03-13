@@ -168,7 +168,7 @@ R3F_LOG_CFG_objets_transportables =
 
 R3F_LOG_CFG_objets_deplacables =
 [
-	"Land_TentHangar_V1_F"
+	"Land_TentHangar_V1_F",
 	"Land_LampAirport_F",
 	"Land_LampHalogen_F",
 	"Land_LampStadium_F",
