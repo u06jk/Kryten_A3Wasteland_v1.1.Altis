@@ -161,18 +161,14 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Stone_8m_F", 5],
 	["Land_ToiletBox_F", 2],
 	["Land_BarrelWater_F", 2],
-	["Land_TentHangar_V1_F", 50],
-	["Land_Dome_Big_F", 60],
-	["Land_Dome_Small_F", 40]
+	["Land_TentHangar_V1_F", 50]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
 
 R3F_LOG_CFG_objets_deplacables =
 [
-	"Land_TentHangar_V1_F",
-	"Land_Dome_Big_F",
-	"Land_Dome_Small_F",
+	"Land_TentHangar_V1_F"
 	"Land_LampAirport_F",
 	"Land_LampHalogen_F",
 	"Land_LampStadium_F",
