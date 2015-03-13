@@ -11,8 +11,6 @@
 
 if (!isServer) exitWith {};
 
-//_storeMarkers = [];
-
 {
 	_marker = _x;
 	
@@ -57,8 +55,4 @@ if (!isServer) exitWith {};
 } forEach allMapMarkers;
 
 // Create random group in cities.
-//_cities = call cityList; ???
-
-//_cityCount = (count (call cityList)) / 5;
-
-//_randomLoc = (call cityList) call BIS_fnc_selectRandom;
+//_cities = call cityList;

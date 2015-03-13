@@ -46,7 +46,7 @@ if (isNil("LV_vehicleInit")) then {LV_vehicleInit = compile preprocessFile "addo
 
 _centerPos = getMarkerPos _marker;
 
-_menAmount = _menMax + (ceil (random _menRandomMax));
+_menAmount = _menMax + (round (random _menRandomMax));
 
 diag_log format ["Creating guards for '%1' with '%2' men", _marker, _menAmount];
 
