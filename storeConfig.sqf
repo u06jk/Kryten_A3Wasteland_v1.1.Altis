@@ -751,10 +751,13 @@ colorsArray = compileFinal str
 			["Swiss Flec", _texDir + "swissflec.jpg"],
 			["Russia", _texDir + "russia.jpg"],
 			["Cobra", _texDir + "cobra.jpg"],
-			["RJ", _texDir + "realtree.jpg"],
+			["RJ Tree", _texDir + "realtree.jpg"],
 			["LoCo", _texDir + "loco.jpg"],
 			["Rage", _texDir + "rage.jpg"],
-			["Kryten", _texDir + "kryten.jpg"]
+			["Kryten", _texDir + "kryten.jpg"],
+			["DonkeyBoy", _texDir + "donkeyboy.jpg"],
+			["RJ Fire",  _texDir + "rj.jpg"],
+			["Dead Meat",  _texDir + "deadmeat.jpg"]
 		]
 	],
 	[ // Kart colors

@@ -37,7 +37,7 @@ _vehText ctrlSetText "";
 		_vehClass = _x select 1;
 		_price = _x select 2;
 		
-		_price = _price * 3;
+		_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 		
 		_vehText ctrlSetText format ["Price: $%1", [_price] call fn_numbersText];		
 	};

@@ -63,7 +63,7 @@ storePurchaseHandle = _this spawn
 					_price = _x select 2;
 					_mag = configFile >> "CfgMagazines" >> _class;
 					
-					_price = _price * 3;
+					_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 					//ensure the player has enough money
 					if (_price > _playerMoney) exitWith

@@ -131,7 +131,7 @@ storePurchaseHandle = _this spawn
 					_price = _x select 2;
 				};
 				
-				_price = _price * 3;
+				_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 				// Ensure the player has enough money
 				if (_price > _playerMoney) exitWith
@@ -280,7 +280,7 @@ storePurchaseHandle = _this spawn
 				_class = _x select 1;
 				_price = _x select 2;
 				
-				_price = _price * 3;
+				_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 				// Ensure the player has enough money
 				if (_price > _playerMoney) exitWith
@@ -332,7 +332,7 @@ storePurchaseHandle = _this spawn
 				_class = _x select 1;
 				_price = _x select 2;
 				
-				_price = _price * 3;
+				_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 				if (headgear player == _class) exitWith
 				{
@@ -362,7 +362,7 @@ storePurchaseHandle = _this spawn
 				_class = _x select 1;
 				_price = _x select 2;
 				
-				_price = _price * 3;
+				_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 				if (uniform player == _class) exitWith
 				{
@@ -397,7 +397,7 @@ storePurchaseHandle = _this spawn
 					_price = [_class] call getCapacity;
 				};
 				
-				_price = _price * 3;
+				_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 				if (vest player == _class) exitWith
 				{
@@ -427,7 +427,7 @@ storePurchaseHandle = _this spawn
 				_class = _x select 1;
 				_price = _x select 2;
 				
-				_price = _price * 3;
+				_price = _price * (["A3W_kryten_storeMultiply", 3] call getPublicVar);
 
 				if (backpack player == _class) exitWith
 				{

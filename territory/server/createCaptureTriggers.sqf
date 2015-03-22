@@ -29,11 +29,7 @@ if (!isServer) exitWith {};
 				_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 				_groupID = nil;
 				
-				//["A3W_kryten_territoryGuards", 5] call getPublicVar
-				//["A3W_kryten_territoryGuardsRandom", 5] call getPublicVar
-				//["A3W_kryten_territoryVehiclesRandom", 2] call getPublicVar
-				
-				[_marker, _radius, 5, 5, 2, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\militarizeK.sqf";
+				[_marker, _radius, ["A3W_kryten_territoryGuards", 5] call getPublicVar, ["A3W_kryten_territoryGuardsRandom", 5] call getPublicVar, ["A3W_kryten_territoryVehiclesRandom", 2] call getPublicVar, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\militarizeK.sqf";
 			};
 		}
 		else
@@ -54,10 +50,7 @@ if (!isServer) exitWith {};
 				_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 				_groupID = nil;
 				
-				//["A3W_kryten_storeGuards", 2] call getPublicVar
-				//["A3W_kryten_storeGuardsRandom", 2] call getPublicVar
-				
-				[_marker, 2, 2, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
+				[_marker, ["A3W_kryten_storeGuards", 2] call getPublicVar, ["A3W_kryten_storeGuardsRandom", 2] call getPublicVar, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
 			}
 		};
 	};
