@@ -731,7 +731,7 @@ colorsArray = compileFinal str
 			["Denim", _texDir + "denim.jpg"],
 			["Psych", _texDir + "psych.jpg"],
 			["Leopard", _texDir + "leopard.jpg"],
-			["Holland!", _texDir + "holland.jpg"], //GoT addition (dutch flag)
+			["Holland!", _texDir + "holland.jpg"],
 			["'Murica", _texDir + "murica.jpg"],
 			["Confederate", _texDir + "confederate.jpg"],
 			["Union Jack", _texDir + "unionjack.jpg"],
@@ -748,9 +748,13 @@ colorsArray = compileFinal str
 			["Skulls", _texDir + "skulls.jpg"],
 			["Zebra", _texDir + "zebra.jpg"],
 			["Hello Kitty", _texDir + "kitty.jpg"],
-			["LoCo", _texDir + "swissflec.jpg"],
+			["Swiss Flec", _texDir + "swissflec.jpg"],
 			["Russia", _texDir + "russia.jpg"],
-			["Cobra", _texDir + "cobra.jpg"]
+			["Cobra", _texDir + "cobra.jpg"],
+			["RJ", _texDir + "realtree.jpg"],
+			["LoCo", _texDir + "loco.jpg"],
+			["Rage", _texDir + "rage.jpg"],
+			["Kryten", _texDir + "kryten.jpg"]
 		]
 	],
 	[ // Kart colors
