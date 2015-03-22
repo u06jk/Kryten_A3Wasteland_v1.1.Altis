@@ -11,8 +11,6 @@
 
 if (!isServer) exitWith {};
 
-#define spawnGuards (["A3W_kryten_spawnGuards"], 1] call getPublicVar >= 1)
-
 {
 	_marker = _x;
 	
@@ -24,7 +22,7 @@ if (!isServer) exitWith {};
 			_trig = createTrigger ["EmptyDetector", markerPos _marker];
 			_trig setVariable ["captureTriggerMarker", _marker, true];
 			
-			if (spawnGuards) then {
+			if (["A3W_kryten_spawnGuards"], 1] call getPublicVar >= 1) then {
 				//Set default guards
 				_size = getMarkerSize _marker;
 				_radius = (_size select 0) min (_size select 1);
@@ -41,7 +39,7 @@ if (!isServer) exitWith {};
 		};
 	};
 	
-	if (spawnGuards) then {
+	if (["A3W_kryten_spawnGuards"], 1] call getPublicVar >= 1) then {
 		if ((["GunStore", _marker] call fn_startsWith) or (["GenStore", _marker] call fn_startsWith) or (["VehStore", _marker] call fn_startsWith)) then
 		{
 			if ((count _marker) == 9) then
@@ -53,8 +51,6 @@ if (!isServer) exitWith {};
 				_groupID = nil;
 				
 				[_marker, 2, 2, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
-				
-				//_storeMarkers set [count _storeMarkers, _marker];
 			}
 		};
 	};
