@@ -41,8 +41,6 @@ _price = _itemConfigInfo select 1;
 _description = _itemConfigInfo select 2;
 _showAmmo = _itemConfigInfo select 3;
 
-_price = _price * 3;
-
 // Display price and description
 _gunlisttext ctrlSetText format ["Price: $%1", [_price] call fn_numbersText];
 _gunDesc ctrlSetStructuredText parseText _description;
