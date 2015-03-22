@@ -22,12 +22,16 @@ if (!isServer) exitWith {};
 			_trig = createTrigger ["EmptyDetector", markerPos _marker];
 			_trig setVariable ["captureTriggerMarker", _marker, true];
 			
-			if (["A3W_kryten_spawnGuards"], 1] call getPublicVar >= 1) then {
+			if (["A3W_kryten_spawnTerritoryGuards", 1] call getPublicVar > 0) then {
 				//Set default guards
 				_size = getMarkerSize _marker;
 				_radius = (_size select 0) min (_size select 1);
 				_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 				_groupID = nil;
+				
+				//["A3W_kryten_territoryGuards", 5] call getPublicVar
+				//["A3W_kryten_territoryGuardsRandom", 5] call getPublicVar
+				//["A3W_kryten_territoryVehiclesRandom", 2] call getPublicVar
 				
 				[_marker, _radius, 5, 5, 2, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\militarizeK.sqf";
 			};
@@ -39,7 +43,7 @@ if (!isServer) exitWith {};
 		};
 	};
 	
-	if (["A3W_kryten_spawnGuards"], 1] call getPublicVar >= 1) then {
+	if (["A3W_kryten_spawnStoreGuards", 1] call getPublicVar > 0) then {
 		if ((["GunStore", _marker] call fn_startsWith) or (["GenStore", _marker] call fn_startsWith) or (["VehStore", _marker] call fn_startsWith)) then
 		{
 			if ((count _marker) == 9) then
@@ -49,6 +53,9 @@ if (!isServer) exitWith {};
 				//Set default guards
 				_customInit = "[[this], 'A3W_fnc_disableFF',true, true] call BIS_fnc_MP; this addEventHandler ['Killed', server_playerDied]; this setVariable ['isGuard',true,true];";
 				_groupID = nil;
+				
+				//["A3W_kryten_storeGuards", 2] call getPublicVar
+				//["A3W_kryten_storeGuardsRandom", 2] call getPublicVar
 				
 				[_marker, 2, 2, _customInit, if (isNil "_groupID") then {nil} else {_groupID}] execVM "addons\AI_spawn\fillHouseK.sqf";
 			}
