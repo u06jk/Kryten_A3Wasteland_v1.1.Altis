@@ -39,6 +39,8 @@ storeSellingHandle = [] spawn
 			_price = _x select 5;
 		};
 	} forEach (call customPlayerItems);
+	
+	_price = _price * 3;
 
 	if (!isNil "_price") then
 	{
