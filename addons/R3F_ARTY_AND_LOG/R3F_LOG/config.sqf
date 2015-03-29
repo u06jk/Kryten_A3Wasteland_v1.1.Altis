@@ -165,13 +165,15 @@ R3F_LOG_CFG_objets_transportables =
 	["Land_Hangar_F", 75],
 	["Land_Dome_Small_F", 50],
 	["Land_Dome_Big_F", 75],
-	["Land_nav_pier_m_F",30] 
+	["Land_nav_pier_m_F", 30],
+	["Land_Pier_F", 30]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
 
 R3F_LOG_CFG_objets_deplacables =
 [
+	"Land_Pier_F",
 	"Land_nav_pier_m_F",
 	"Land_Hangar_F",
 	"Land_Dome_Small_F",
