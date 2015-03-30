@@ -126,10 +126,10 @@ _setupObjects =
 
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
-	_leader setRank "LIEUTENANT";
+	_leader setRank "COLONEL";
 	
-	_aiGroup setCombatMode "GREEN"; // units will defend themselves
-	_aiGroup setBehaviour "SAFE"; // units feel safe until they spot an enemy or get into contact
+	_aiGroup setCombatMode "RED"; 
+	_aiGroup setBehaviour "SAFE";
 	_aiGroup setFormation "STAG COLUMN";
 
 	_speedMode = if (missionDifficultyHard) then { "NORMAL" } else { "LIMITED" };
@@ -139,7 +139,7 @@ _setupObjects =
 		_waypoint = _aiGroup addWaypoint [_x, 0];
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointCompletionRadius 50;
-		_waypoint setWaypointCombatMode "GREEN";
+		_waypoint setWaypointCombatMode "RED";
 		_waypoint setWaypointBehaviour "SAFE"; // safe is the best behaviour to make AI follow roads, as soon as they spot an enemy or go into combat they WILL leave the road for cover though!
 		_waypoint setWaypointFormation "FILE";
 		_waypoint setWaypointSpeed _speedMode;

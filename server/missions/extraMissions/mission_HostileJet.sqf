@@ -63,7 +63,7 @@ _setupObjects =
 	
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
-	_leader setRank "LIEUTENANT";
+	_leader setRank "COLONEL";
 	
 	_aiGroup setCombatMode "RED";
 	_aiGroup setBehaviour "COMBAT";
