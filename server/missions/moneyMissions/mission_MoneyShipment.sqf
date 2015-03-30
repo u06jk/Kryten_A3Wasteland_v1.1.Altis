@@ -162,7 +162,7 @@ _setupVars =
 
 _setupObjects =
 {
-	private ["_starts", "_startDirs", "_waypoints"];
+	private ["_vehCount","_starts", "_startDirs", "_waypoints"];
 	call compile preprocessFileLineNumbers format ["mapConfig\convoys\%1.sqf", _missionLocation];
 
 	_createVehicle =
@@ -210,9 +210,11 @@ _setupObjects =
 
 	_aiGroup = createGroup CIVILIAN;
 
+	_vehCount = 0;
 	_vehicles = [];
 	{
-		_vehicles pushBack ([_x, _starts select 0, _startdirs select 0, _aiGroup] call _createVehicle);
+		_vehicles pushBack ([_x, _starts select _vehCount, _startdirs select _vehCount, _aiGroup] call _createVehicle);
+		_vehCount = _vehCount + 1;
 	} forEach _vehClasses;
 
 	_veh2 = _vehClasses select (1 min (count _vehClasses - 1));
