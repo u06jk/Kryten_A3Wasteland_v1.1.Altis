@@ -7,7 +7,7 @@
 if (!isServer) exitwith {};
 #include "patrolMissionDefines.sqf";
 
-private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3"];
+private ["_convoyVeh","_veh1","_veh2","_veh3","_veh4","_veh5","_veh6","_veh7","_veh8","_veh9","_veh10","_createVehicle1","_createVehicle2","_createVehicle3","_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_cash", "_box1", "_box2", "_box3"];
 
 _setupVars =
 {
@@ -23,8 +23,8 @@ _setupObjects =
 	// Pick the vehicles for the patrol. Only one set at the moment. Will add more later.
 	_convoyVeh = 
 	[	
-		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"],
-		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"]
+		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"],
+		["I_G_Offroad_01_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","O_MBT_02_cannon_F","I_MRAP_03_F","O_APC_Tracked_02_AA_F","I_MBT_03_cannon_F","I_G_Offroad_01_F"]
 	] call BIS_fnc_selectRandom;
 	
 	_veh1 = _convoyVeh select 0;
@@ -33,6 +33,10 @@ _setupObjects =
 	_veh4 = _convoyVeh select 3;
 	_veh5 = _convoyVeh select 4;
 	_veh6 = _convoyVeh select 5;
+	_veh7 = _convoyVeh select 6;
+	_veh8 = _convoyVeh select 7;
+	_veh9 = _convoyVeh select 8;
+	_veh10 = _convoyVeh select 9;
 
 	_createVehicle1 = {
 		private ["_type","_position","_direction","_vehicle","_soldier"];
@@ -82,7 +86,7 @@ _setupObjects =
 		_vehicle
 	};
 
-		_createVehicle3 = {
+	_createVehicle3 = {
 		private ["_type","_position","_direction","_vehicle","_soldier"];
 		
 		_type = _this select 0;
@@ -113,7 +117,11 @@ _setupObjects =
 		[_veh3, _starts select 2, _startDirs select 2] call _createVehicle1,
 		[_veh4, _starts select 3, _startDirs select 3] call _createVehicle2,
 		[_veh5, _starts select 4, _startDirs select 4] call _createVehicle2,
-		[_veh6, _starts select 5, _startDirs select 5] call _createVehicle3
+		[_veh6, _starts select 5, _startDirs select 5] call _createVehicle3,
+		[_veh7, _starts select 1, _startDirs select 1] call _createVehicle2,
+		[_veh8, _starts select 2, _startDirs select 2] call _createVehicle1,
+		[_veh9, _starts select 3, _startDirs select 3] call _createVehicle2,
+		[_veh10, _starts select 4, _startDirs select 4] call _createVehicle2
 	];
 
 	_leader = effectiveCommander (_vehicles select 0);
@@ -166,7 +174,7 @@ _successExec =
 		_cash = "Land_Money_F" createVehicle markerPos _marker;
 		_cash setPos ((markerPos _marker) vectorAdd ([[2 + random 2,0,0], random 360] call BIS_fnc_rotateVector2D));
 		_cash setDir random 360;
-		_cash setVariable["cmoney",5000,true];
+		_cash setVariable["cmoney",10000,true];
 		_cash setVariable["owner","world",true];
 	};
 

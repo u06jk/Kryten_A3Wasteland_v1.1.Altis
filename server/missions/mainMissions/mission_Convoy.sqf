@@ -9,7 +9,7 @@
 if (!isServer) exitwith {};
 #include "mainMissionDefines.sqf";
 
-private ["_convoyVeh", "_veh1", "_veh2", "_veh3", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2"];
+private ["_convoyVeh", "_veh1", "_veh2", "_veh3","_veh4","_veh5", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_box1", "_box2"];
 
 _setupVars =
 {
@@ -25,14 +25,16 @@ _setupObjects =
 	// pick the vehicles for the convoy
 	_convoyVeh =
 	[
-		["B_MRAP_01_hmg_F", "B_Truck_01_covered_F", "B_MRAP_01_hmg_F"],
-		["O_MRAP_02_hmg_F", "O_Truck_03_covered_F", "O_MRAP_02_hmg_F"],
-		["I_MRAP_03_hmg_F", "I_Truck_02_covered_F", "I_MRAP_03_hmg_F"]
+		["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F", "B_Truck_01_covered_F", "B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"],
+		["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F", "O_Truck_03_covered_F", "O_MRAP_02_hmg_F","O_MRAP_02_gmg_F"],
+		["I_MRAP_03_hmg_F","I_MRAP_03_gmg_F", "I_Truck_02_covered_F", "I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"]
 	] call BIS_fnc_selectRandom;
 
 	_veh1 = _convoyVeh select 0;
 	_veh2 = _convoyVeh select 1;
 	_veh3 = _convoyVeh select 2;
+	_veh4 = _convoyVeh select 3;
+	_veh5 = _convoyVeh select 4;
 
 	_createVehicle =
 	{
@@ -82,8 +84,10 @@ _setupObjects =
 	_vehicles =
 	[
 		[_veh1, _starts select 0, _startDirs select 0] call _createVehicle,
-		[_veh2, _starts select 1, _startDirs select 1] call _createVehicle,
-		[_veh3, _starts select 2, _startDirs select 2] call _createVehicle
+		[_veh2, _starts select 0, _startDirs select 0] call _createVehicle,
+		[_veh3, _starts select 0, _startDirs select 0] call _createVehicle,
+		[_veh4, _starts select 0, _startDirs select 0] call _createVehicle,
+		[_veh5, _starts select 0, _startDirs select 0] call _createVehicle
 	];
 
 	_leader = effectiveCommander (_vehicles select 0);

@@ -69,7 +69,7 @@ _setupObjects =
 		};
 
 		// remove flares because it overpowers AI choppers
-		if (_type isKindOf "Air") then
+		/*if (_type isKindOf "Air") then
 		{
 			{
 				if (["CMFlare", _x] call fn_findString != -1) then
@@ -77,7 +77,7 @@ _setupObjects =
 					_vehicle removeMagazinesTurret [_x, [-1]];
 				};
 			} forEach getArray (configFile >> "CfgVehicles" >> _type >> "magazines");
-		};
+		};*/
 
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
 		_vehicle

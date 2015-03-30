@@ -32,7 +32,7 @@ while {true} do
 
 	_objet_pointe = cursorTarget;
 
-	if (vehicle player == player && {!isNull _objet_pointe} && {player distance _objet_pointe < 25} && {!local _objet_pointe || {[":-", netId _objet_pointe] call fn_findString == -1}}) then
+	if (vehicle player == player && {!isNull _objet_pointe} && {player distance _objet_pointe < 30} && {!local _objet_pointe || {[":-", netId _objet_pointe] call fn_findString == -1}}) then
 	{
 		R3F_LOG_objet_addAction = _objet_pointe;
 
