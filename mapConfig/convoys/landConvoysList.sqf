@@ -10,5 +10,6 @@
 	"LandConvoy_3",
 	"LandConvoy_4",
 	"LandConvoy_5",
-	"LandConvoy_6"
+	"LandConvoy_6",
+	"LandConvoy_7"
 ]
