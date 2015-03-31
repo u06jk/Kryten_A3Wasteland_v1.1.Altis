@@ -2130,7 +2130,7 @@ class Mission
 		};
 		class Item149
 		{
-			position[]={21400,,20500};
+			position[]={21400,0,20500};
 			name="SunkenMission_7";
 			type="Empty";
 			colorName="ColorWhite";
