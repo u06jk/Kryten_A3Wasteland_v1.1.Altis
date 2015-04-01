@@ -74,7 +74,7 @@ _successExec =
 	
 	_cashAmountList = [2500,5000,7500,10000];
 		
-	_cashAmount = _cashamountrandomizerb call BIS_fnc_SelectRandom;
+	_cashAmount = _cashAmountList call BIS_fnc_SelectRandom;
 	
 	for "_i" from 1 to 5 do
 	{
