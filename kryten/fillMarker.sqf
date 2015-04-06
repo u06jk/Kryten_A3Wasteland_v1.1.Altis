@@ -34,7 +34,7 @@ _milGroup = createGroup east;
 
 if (_menAmount > 0) then {
 	for "_i" from 1 to _menAmount do {
-		_unit = [_centerPos, _radius, _milGroup] execVM "kryten\createUnit.sqf";
+		_unit = [_centerPos, _radius, _milGroup] execVM "kryten\createRandomUnit.sqf";
 		
 		nul = [_unit, _centerPos, _radius, true] execVM "addons\AI_spawn\patrol-vD.sqf";
 		
