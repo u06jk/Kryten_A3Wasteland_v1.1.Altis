@@ -35,9 +35,7 @@ _milGroup = createGroup east;
 if (_menAmount > 0) then {
 	for "_i" from 1 to _menAmount do {
 		_unit = [_centerPos, _radius, _milGroup] execVM "kryten\createRandomUnit.sqf";
-		
 		nul = [_unit, _centerPos, _radius, true] execVM "addons\AI_spawn\patrol-vD.sqf";
-		
 		_unit allowDamage false;
 		_allUnitsArray set [(count _allUnitsArray), _unit];
 	};
@@ -46,11 +44,8 @@ if (_menAmount > 0) then {
 if (_vehAmount > 0) then {
 	for "_i" from 1 to _vehAmount do {
 		_vehicle = [_centerPos, _milGroup] execVM "kryten\createLandVehicle.sqf";
-		
 		nul = [_vehicle, _centerPos] execVM "addons\AI_spawn\patrol-vE.sqf";
-		
 		_vehicle allowDamage false;
-        
         _allUnitsArray set [(count _allUnitsArray), _vehicle];
 	};
 };
@@ -58,11 +53,8 @@ if (_vehAmount > 0) then {
 if (_airAmount > 0) then {
 	for "_i" from 1 to _airAmount do {
 		_vehicle = [_centerPos, _milGroup] execVM "kryten\createAirVehicle.sqf";
-		
 		nul = [_vehicle, _centerPos] execVM "addons\AI_spawn\patrol-vE.sqf";
-		
 		_vehicle allowDamage false;
-        
         _allUnitsArray set [(count _allUnitsArray), _vehicle];
 	};
 };

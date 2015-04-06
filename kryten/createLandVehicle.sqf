@@ -45,7 +45,7 @@ sleep 2;
 _vehicle allowDamage true;
 
 for "_i" from 1 to _spots do {
-	_unit = [_pos, _radius, _milGroup] execVM "kryten\createUnit.sqf";
+	_unit = [_pos, _radius, _milGroup, _i - 1, false, false] execVM "kryten\createUnit.sqf";
 	
 	switch (_i) do {
 		case 1: {

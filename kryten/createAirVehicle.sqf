@@ -16,10 +16,10 @@ _vehicle = createVehicle [_selectedVehicle, _position, [], 0, "FLY"];
 
 sleep 0.5;
 
-_driver = [_position, 10, _milGroup] execVM "kryten\createUnit.sqf";
+_driver = [_position, 10, _milGroup, 0, false, false] execVM "kryten\createUnit.sqf";
 _driver moveInDriver _vehicle;
 
-_gunner = [_position, 10, _milGroup] execVM "kryten\createUnit.sqf";
+_gunner = [_position, 10, _milGroup, 1, false, false] execVM "kryten\createUnit.sqf";
 _gunner moveInGunner _vehicle;
 
 _vehicle

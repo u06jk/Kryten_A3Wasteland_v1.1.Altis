@@ -2,7 +2,7 @@
 position,
 radius,
 milGroup,
-weapon, 1-Mk18, 2=MXM
+weapon,
 antiTank,
 antiAir
 */
@@ -17,6 +17,14 @@ _milGroup = _this select 2;
 _weapon = _this select 3;
 _antiTank = _this select 4;
 _antiAir = _this select 5;
+
+if (_antiTank) then
+{
+	if (_antiAir) then
+	{
+		_antiAir = false;
+	};
+};
 
 _validPos = false;
 while {!_validPos} do {
@@ -62,6 +70,61 @@ switch (_weapon) do
 		_unit addMagazine "30Rnd_65x39_caseless_mag";
 		_unit addMagazine "30Rnd_65x39_caseless_mag";
 		_unit addMagazine "30Rnd_65x39_caseless_mag";
+	};
+	
+	case (3):
+	{
+		_unit addMagazine "30Rnd_65x39_caseless_mag";
+		_unit addWeapon "arifle_MX_GL_ACO_F";
+		_unit addMagazine "30Rnd_65x39_caseless_mag";
+		_unit addMagazine "1Rnd_HE_Grenade_shell";
+		_unit addMagazine "1Rnd_HE_Grenade_shell";
+		_unit addMagazine "1Rnd_HE_Grenade_shell";
+	};
+	
+	case (4):
+	{
+		_unit addMagazine "30Rnd_65x39_caseless_mag";
+		_unit addWeapon "arifle_MXC_Holo_F";
+		_unit addMagazine "30Rnd_65x39_caseless_mag";
+		_unit addMagazine "30Rnd_65x39_caseless_mag";
+		_unit addMagazine "30Rnd_65x39_caseless_mag";
+	};
+	
+	case (5):
+	{
+		_unit addMagazine "200Rnd_65x39_cased_Box";
+		_unit addWeapon "LMG_Mk200_MRCO_F";
+		_unit addMagazine "200Rnd_65x39_cased_Box";
+		_unit addMagazine "200Rnd_65x39_cased_Box";
+		_unit addMagazine "200Rnd_65x39_cased_Box";
+	};
+	
+	case (6):
+	{
+		_unit addMagazine "5Rnd_127x108_Mag";
+		_unit addWeapon "srifle_GM6_SOS_F";
+		_unit addMagazine "5Rnd_127x108_Mag";
+		_unit addMagazine "5Rnd_127x108_Mag";
+		_unit addMagazine "5Rnd_127x108_Mag";
+	};
+	
+	case (7):
+	{
+		_unit addMagazine "7Rnd_408_Mag";
+		_unit addWeapon "srifle_LRR_SOS_F";
+		_unit addMagazine "7Rnd_408_Mag";
+		_unit addMagazine "7Rnd_408_Mag";
+		_unit addMagazine "7Rnd_408_Mag";
+	};
+	
+	default
+	{
+		_unit addMagazine "20Rnd_762x51_Mag";
+		_unit addWeapon "srifle_EBR_SOS_F";
+		_unit addMagazine "20Rnd_762x51_Mag";
+		_unit addMagazine "20Rnd_762x51_Mag";
+		_unit addMagazine "20Rnd_762x51_Mag";
 	};
 };
 
