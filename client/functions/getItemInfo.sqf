@@ -98,7 +98,7 @@ if (!isNil "_itemEntry") then
 	_itemType = _itemEntry select 1;
 	_price = _itemEntry select 2;
 	_weapon = configFile >> _parentCfg >> _itemType;
-	
+
 	// Set custom name and/or description
 	if (count _itemEntry > 3) then
 	{
@@ -130,6 +130,10 @@ if (!isNil "_itemEntry") then
 
 						//_name = getText (_weapon >> "displayName") + " UAV";
 						_description = "Remote-controlled quadcopter to spy on your neighbors, pre-packaged in a backpack.<br/>UAV Terminal sold separately. Ages 8+";
+					};
+					case (["_Static_Designator_", _itemType] call fn_findString != -1):
+					{
+						_description = "Remote-controlled laser designator.<br/>UAV Terminal sold separately.";
 					};
 					default
 					{
