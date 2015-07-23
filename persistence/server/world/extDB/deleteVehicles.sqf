@@ -4,13 +4,27 @@
 //	@file Name: deleteVehicles.sqf
 //	@file Author: AgentRev
 
-private ["_vehicles", "_values", "_id"];
+private ["_vehicles", "_values", "_hcObjSavingOn", "_id"];
 _vehicles = _this;
-
 _values = "";
+_hcObjSavingOn = (isServer && ["A3W_hcObjSaving"] call isConfigOn);
 
 {
-	_id = if (typeName _x == "OBJECT") then { _x getVariable "A3W_vehicleID" } else { _x };
+	if (typeName _x == "OBJECT") then
+	{
+		_id = _x getVariable "A3W_vehicleID";
+		[_x, ["A3W_vehicleID", nil, true]] call fn_secureSetVar;
+		[_x, ["A3W_vehicleSaved", false, true]] call fn_secureSetVar;
+
+		if (_hcObjSavingOn) then
+		{
+			A3W_vehicleIDs = A3W_vehicleIDs - [_id];
+		};
+	}
+	else
+	{
+		_id = _x;
+	};
 
 	if (!isNil "_id") then
 	{

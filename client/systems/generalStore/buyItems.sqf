@@ -118,7 +118,7 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
-			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
 
@@ -275,7 +275,7 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
-			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
 				_price = _x select 2;
@@ -327,7 +327,7 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
-			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
 				_price = _x select 2;
@@ -357,7 +357,7 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
-			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
 				_price = _x select 2;
@@ -387,7 +387,7 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
-			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
 				_price = _x select 2;
@@ -422,7 +422,7 @@ storePurchaseHandle = _this spawn
 	if (isNil "_price") then
 	{
 		{
-			if (_itemText == _x select 0 && _itemData == _x select 1) exitWith
+			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
 				_price = _x select 2;
